@@ -1,0 +1,2241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kaushal Saathi – Teacher Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<!-- HAMBURGER BUTTON (mobile only) -->
+<button class="menu-toggle" id="menuToggle" onclick="toggleSidebar()" aria-label="Toggle menu">
+  <span></span><span></span><span></span>
+</button>
+
+<!-- OVERLAY (mobile only) -->
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <h1>Kaushal Saathi</h1>
+    <span>Teacher Platform</span>
+    <div class="streak-pill">🔥 12 Day Streak</div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="nav-section-label">Main</div>
+    <div class="nav-item active" id="nav-home" data-label="Home" onclick="showPage('home', this)">
+      <div class="icon">🏡</div> Home
+    </div>
+    <div class="nav-item" data-label="Dashboard" onclick="showPage('dashboard', this)">
+      <div class="icon">🏠</div> Dashboard
+    </div>
+    <div class="nav-item" data-label="Timetable" onclick="showPage('timetable', this)">
+      <div class="icon">🗓️</div> Timetable
+    </div>
+    <div class="nav-item" data-label="AI Lesson Plan" onclick="showPage('lessonplan', this)">
+      <div class="icon">✨</div> AI Lesson Plan
+    </div>
+    <div class="nav-item" data-label="Content Repository" onclick="showPage('content', this)">
+      <div class="icon">📚</div> Content Repository
+    </div>
+    <div class="nav-section-label">Teaching</div>
+    <div class="nav-item" data-label="Projects" onclick="showPage('projects', this)">
+      <div class="icon">🌱</div> Projects
+    </div>
+    <div class="nav-item" data-label="Assessments" onclick="showPage('assessments', this)">
+      <div class="icon">📝</div> Assessments
+    </div>
+    <div class="nav-item" data-label="Subject Integration" onclick="showPage('subjects', this)">
+      <div class="icon">🔗</div> Subject Integration
+    </div>
+    <div class="nav-section-label">Connect</div>
+    <div class="nav-item" data-label="Chat with Me" onclick="showPage('chat', this)">
+      <div class="icon">💬</div> Chat with Me
+    </div>
+    <div class="nav-item" data-label="Field Visits" onclick="showPage('fieldvisits', this)">
+      <div class="icon">🗺️</div> Field Visits
+    </div>
+    <div class="nav-item" data-label="Notifications" onclick="showPage('notifications', this)">
+      <div class="icon">🔔</div> Notifications
+    </div>
+    <div class="nav-section-label">Achievements</div>
+    <div class="nav-item" data-label="Gamified Zone" onclick="showPage('gamified', this)">
+      <div class="icon">🏆</div> Gamified Zone
+    </div>
+    <div class="nav-item" data-label="Success Stories" onclick="showPage('stories', this)">
+      <div class="icon">⭐</div> Success Stories
+    </div>
+    <div class="nav-item" data-label="Generate Report" onclick="showPage('reports', this)">
+      <div class="icon">📊</div> Generate Report
+    </div>
+  </nav>
+
+  <div class="sidebar-bottom">
+    <div class="teacher-card">
+      <div class="teacher-avatar">PS</div>
+      <div class="teacher-info">
+        <div class="name">Priya Sharma</div>
+        <div class="role">Grade 6 · Science</div>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <button onclick="showPage('home',null)" style="padding:6px 12px;background:rgba(200,75,47,0.1);color:var(--terracotta);border:1.5px solid rgba(200,75,47,0.2);border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;">🏡 Home</button>
+      <span class="page-title" id="page-title">Home — Kaushal Saathi</span>
+    </div>
+    <div class="topbar-right">
+      <button class="topbar-btn btn-outline">+ New Lesson Plan</button>
+      <button class="topbar-btn btn-primary">Quick AI Action ✨</button>
+      <div class="notif-dot" onclick="showPage('notifications', null)">🔔</div>
+    </div>
+  </div>
+
+  <!-- ── HOME ── -->
+  <div class="content active" id="page-home">
+    <!-- Announcement Banner -->
+    <div style="background:linear-gradient(90deg,var(--terracotta),var(--terracotta-dark));color:#fff;text-align:center;padding:10px 20px;font-size:13px;font-weight:500;margin:-28px -32px 0;position:sticky;top:60px;z-index:10;">
+      🌟 Kaushal Saathi — AI-Powered Teacher Platform · Free for all Teachers · Always private
+    </div>
+
+    <!-- Hero Section -->
+    <div style="text-align:center;padding:44px 20px 32px;">
+      <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:14px;">
+        <span style="font-size:36px;">🌱</span>
+        <h1 style="font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:var(--ink);">Kaushal Saathi — Teacher Platform</h1>
+      </div>
+      <p style="font-size:14.5px;color:var(--ink-mid);max-width:700px;margin:0 auto;line-height:1.8;">
+        Your complete teaching companion — generate AI lesson plans, manage projects, track assessments, and connect with experts.<br>
+    
+      </p>
+    </div>
+
+    <!-- Feature Cards Grid Row 1 -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:20px;">
+
+      <!-- Card 1: Dashboard -->
+      <div class="home-feature-card" onclick="showPage('dashboard',null)" style="cursor:pointer;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#22a45d,#1a7a46);display:flex;align-items:center;justify-content:center;font-size:26px;">🏠</div>
+          <span style="background:#22a45d;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">✓</span>
+        </div>
+        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">My Dashboard</h3>
+        <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">Your teaching overview at a glance</p>
+        <ul style="list-style:none;padding:0;margin-bottom:14px;">
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#22a45d;flex-shrink:0;">✓</span> Active projects & progress tracking</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#22a45d;flex-shrink:0;">✓</span> Today's lesson & reminders</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#22a45d;flex-shrink:0;">✓</span> Performance stats & streak</li>
+        </ul>
+        <button onclick="event.stopPropagation();showPage('dashboard',null)" style="width:100%;padding:10px;background:#22a45d;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Go to Dashboard</button>
+      </div>
+
+      <!-- Card 2: Chat with AI -->
+      <div class="home-feature-card" onclick="showPage('chat',null)" style="cursor:pointer;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#8b5cf6,#6d28d9);display:flex;align-items:center;justify-content:center;font-size:26px;">💬</div>
+          <span style="background:#8b5cf6;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">✓</span>
+        </div>
+        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">Chat with AI</h3>
+        <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">Your intelligent teaching assistant</p>
+        <ul style="list-style:none;padding:0;margin-bottom:14px;">
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#8b5cf6;flex-shrink:0;">✓</span> Instant answers to classroom questions</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#8b5cf6;flex-shrink:0;">✓</span> Multilingual support (Marathi, Hindi, English)</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#8b5cf6;flex-shrink:0;">✓</span> Quick prompts for lesson ideas</li>
+        </ul>
+        <button onclick="event.stopPropagation();showPage('chat',null)" style="width:100%;padding:10px;background:#8b5cf6;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Start Chatting</button>
+      </div>
+
+      <!-- Card 3: Content Repository -->
+      <div class="home-feature-card" onclick="showPage('content',null)" style="cursor:pointer;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#3b82f6,#1d4ed8);display:flex;align-items:center;justify-content:center;font-size:26px;">📚</div>
+          <span style="background:#3b82f6;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">✓</span>
+        </div>
+        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">Content Repository</h3>
+        <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">Curated teaching materials library</p>
+        <ul style="list-style:none;padding:0;margin-bottom:14px;">
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#3b82f6;flex-shrink:0;">✓</span> Grade 1–8 curriculum materials</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#3b82f6;flex-shrink:0;">✓</span> NEP-aligned activity resources</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#3b82f6;flex-shrink:0;">✓</span> Multilingual content available</li>
+        </ul>
+        <button onclick="event.stopPropagation();showPage('content',null)" style="width:100%;padding:10px;background:#3b82f6;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Browse Content</button>
+      </div>
+
+      <!-- Card 4: Timetable -->
+      <div class="home-feature-card" onclick="showPage('timetable',null)" style="cursor:pointer;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#f59e0b,#d97706);display:flex;align-items:center;justify-content:center;font-size:26px;">🗓️</div>
+          <span style="background:#f59e0b;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">✓</span>
+        </div>
+        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">Smart Timetable</h3>
+        <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">AI-powered period & syllabus planner</p>
+        <ul style="list-style:none;padding:0;margin-bottom:14px;">
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#f59e0b;flex-shrink:0;">✓</span> Auto-schedule remaining syllabus</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#f59e0b;flex-shrink:0;">✓</span> Term-wise period breakdown</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#f59e0b;flex-shrink:0;">✓</span> Completion alerts & pace tips</li>
+        </ul>
+        <button onclick="event.stopPropagation();showPage('timetable',null)" style="width:100%;padding:10px;background:#f59e0b;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Plan My Timetable</button>
+      </div>
+
+    </div>
+
+    <!-- Feature Cards Grid Row 2 -->
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:36px;">
+
+      <!-- Card 5: Projects -->
+      <div class="home-feature-card" onclick="showPage('projects',null)" style="cursor:pointer;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#22a45d,#1a7a46);display:flex;align-items:center;justify-content:center;font-size:26px;">🌱</div>
+          <span style="background:#22a45d;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">✓</span>
+        </div>
+        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">Projects</h3>
+        <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">Manage learning projects & activities</p>
+        <ul style="list-style:none;padding:0;margin-bottom:14px;">
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#22a45d;flex-shrink:0;">✓</span> Kitchen Garden, Biodiversity & more</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#22a45d;flex-shrink:0;">✓</span> Activity-wise progress tracking</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#22a45d;flex-shrink:0;">✓</span> Collaborative & self-paced options</li>
+        </ul>
+        <button onclick="event.stopPropagation();showPage('projects',null)" style="width:100%;padding:10px;background:#22a45d;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">View Projects</button>
+      </div>
+
+      <!-- Card 6: Field Visits -->
+      <div class="home-feature-card" onclick="showPage('fieldvisits',null)" style="cursor:pointer;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#f97316,#ea580c);display:flex;align-items:center;justify-content:center;font-size:26px;">🗺️</div>
+          <span style="background:#f97316;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">✓</span>
+        </div>
+        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">Field Visits</h3>
+        <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">Plan immersive learning experiences</p>
+        <ul style="list-style:none;padding:0;margin-bottom:14px;">
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#f97316;flex-shrink:0;">✓</span> AI-suggested locations near school</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#f97316;flex-shrink:0;">✓</span> Guest lecture booking & planning</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#f97316;flex-shrink:0;">✓</span> Full academic year event calendar</li>
+        </ul>
+        <button onclick="event.stopPropagation();showPage('fieldvisits',null)" style="width:100%;padding:10px;background:#f97316;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Explore Visits</button>
+      </div>
+
+      <!-- Card 7: Assessments -->
+      <div class="home-feature-card" onclick="showPage('assessments',null)" style="cursor:pointer;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#06b6d4,#0891b2);display:flex;align-items:center;justify-content:center;font-size:26px;">📝</div>
+          <span style="background:#06b6d4;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">✓</span>
+        </div>
+        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">Assessments</h3>
+        <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">Evaluate & track student progress</p>
+        <ul style="list-style:none;padding:0;margin-bottom:14px;">
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#06b6d4;flex-shrink:0;">✓</span> Writing, oral & portfolio assessments</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#06b6d4;flex-shrink:0;">✓</span> Auto-grading with rubric builder</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#06b6d4;flex-shrink:0;">✓</span> Detailed result reports & insights</li>
+        </ul>
+        <button onclick="event.stopPropagation();showPage('assessments',null)" style="width:100%;padding:10px;background:#06b6d4;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Create Assessment</button>
+      </div>
+
+      <!-- Card 8: Gamified Zone -->
+      <div class="home-feature-card" onclick="showPage('gamified',null)" style="cursor:pointer;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#ef4444,#dc2626);display:flex;align-items:center;justify-content:center;font-size:26px;">🏆</div>
+          <span style="background:#ef4444;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">✓</span>
+        </div>
+        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">Gamified Zone</h3>
+        <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">Earn badges, climb the leaderboard</p>
+        <ul style="list-style:none;padding:0;margin-bottom:14px;">
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#ef4444;flex-shrink:0;">✓</span> Daily streaks & achievement badges</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#ef4444;flex-shrink:0;">✓</span> Syllabus puzzles & KBC-style quizzes</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#ef4444;flex-shrink:0;">✓</span> Weekly school leaderboard</li>
+        </ul>
+        <button onclick="event.stopPropagation();showPage('gamified',null)" style="width:100%;padding:10px;background:#ef4444;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Start Earning Points</button>
+      </div>
+
+    </div>
+
+    <!-- Mission Section -->
+    <div style="background:var(--card-bg);border:1px solid var(--cream-dark);border-radius:18px;padding:36px 40px;margin-bottom:28px;">
+      <h2 style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;text-align:center;margin-bottom:24px;color:var(--ink);">Our Mission</h2>
+      <div style="max-width:720px;margin:0 auto;">
+        <p style="font-size:14px;line-height:1.8;color:var(--ink-mid);margin-bottom:14px;padding-left:14px;border-left:3px solid #22a45d;">
+          <strong style="color:#22a45d;">Kaushal Saathi</strong> is committed to providing every teacher in India with independent, high-quality teaching tools — regardless of their language, subject, or economic background.
+        </p>
+        <p style="font-size:14px;line-height:1.8;color:var(--ink-mid);margin-bottom:14px;padding-left:14px;border-left:3px solid var(--terracotta);">
+          Our AI-powered platform delivers personalised guidance to teachers and students across multiple Indian languages, supporting healthy academic growth, activity-based learning, and subject integration aligned with NEP 2020.
+        </p>
+        <p style="font-size:14px;line-height:1.8;color:var(--ink-mid);padding-left:14px;border-left:3px solid var(--sky);">
+          Our goal is to make quality education, accessibility, and real-world learning support available to every teacher — so they can bring their best to the classroom every single day.
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div style="background:var(--ink);border-radius:18px;padding:28px 36px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;margin-top:28px;">
+      <div>
+        <div style="color:#fff;font-size:13px;font-weight:700;margin-bottom:4px;">© 2025 Kaushal Saathi. A non-profit initiative.</div>
+        <div style="color:rgba(255,255,255,0.5);font-size:12px;margin-bottom:6px;">Dedicated to empowering every teacher with better learning resources</div>
+        <div style="color:var(--terracotta-light);font-size:12px;cursor:pointer;text-decoration:underline;">Contact Us</div>
+      </div>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button onclick="showPage('dashboard',null)" style="padding:10px 18px;background:rgba(255,255,255,0.1);color:#fff;border:1px solid rgba(255,255,255,0.2);border-radius:8px;font-size:12px;cursor:pointer;">⚙️ Settings & Language</button>
+        <button onclick="showPage('chat',null)" style="padding:10px 18px;background:var(--terracotta);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;">Get Started →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── DASHBOARD ── -->
+  <div class="content" id="page-dashboard">
+    <div class="greeting">
+      <h2>Good morning, Priya! 🌞</h2>
+      <p>Tuesday, 31 March 2026 · Term 3 · Week 8 · Project: Kitchen Garden</p>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card green">
+        <div class="stat-label">Active Projects</div>
+        <div class="stat-value">3</div>
+        <div class="stat-sub">2 completed · 1 pending</div>
+      </div>
+      <div class="stat-card blue">
+        <div class="stat-label">Periods Done</div>
+        <div class="stat-value">127</div>
+        <div class="stat-sub">of 189 total periods</div>
+      </div>
+      <div class="stat-card gold">
+        <div class="stat-label">Avg. Score</div>
+        <div class="stat-value">74%</div>
+        <div class="stat-sub">Across all assessments</div>
+      </div>
+      <div class="stat-card red">
+        <div class="stat-label">Streak</div>
+        <div class="stat-value">🔥12</div>
+        <div class="stat-sub">days consecutive</div>
+      </div>
+    </div>
+
+    <div class="dashboard-grid">
+      <div class="dashboard-col">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Active Projects</span>
+            <span class="card-action" onclick="showPage('projects', null)">View all →</span>
+          </div>
+          <div class="project-item">
+            <div class="project-top">
+              <span class="project-name">🌱 School Kitchen Garden</span>
+              <span class="project-pct">60%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:60%"></div></div>
+            <div class="project-tags">
+              <span class="tag tag-green">Life Forms</span>
+              <span class="tag tag-orange">In Progress</span>
+            </div>
+          </div>
+          <div class="project-item">
+            <div class="project-top">
+              <span class="project-name">🦋 Biodiversity Register</span>
+              <span class="project-pct">100%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:100%"></div></div>
+            <div class="project-tags">
+              <span class="tag tag-green">Life Forms</span>
+              <span class="tag tag-blue">Completed</span>
+            </div>
+          </div>
+          <div class="project-item">
+            <div class="project-top">
+              <span class="project-name">⚙️ Maker Skills</span>
+              <span class="project-pct">30%</span>
+            </div>
+            <div class="progress-bar"><div class="progress-fill" style="width:30%"></div></div>
+            <div class="project-tags">
+              <span class="tag tag-orange">Machines</span>
+              <span class="tag tag-orange">Pending</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="lesson-card">
+          <div class="card-title">Today's Recommended Lesson</div>
+          <h3>Activity 6: Composting Basics</h3>
+          <p>Demonstrate how organic waste breaks down. Connect to vermicompost from Activity 3.</p>
+          <div class="lesson-card-btn" onclick="showPage('lessonplan', null)">Generate Lesson Plan →</div>
+        </div>
+      </div>
+
+      <div class="dashboard-col">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Sector-wise Progress</span>
+          </div>
+          <div class="sector-item">
+            <div class="sector-top"><span class="sector-name">🌿 Life Forms</span><span class="sector-pct">70%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="width:70%; background: linear-gradient(90deg, var(--sage), #A3D9A7)"></div></div>
+          </div>
+          <div class="sector-item">
+            <div class="sector-top"><span class="sector-name">⚙️ Machines & Materials</span><span class="sector-pct">45%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="width:45%; background: linear-gradient(90deg, var(--sky), #8BB8D8)"></div></div>
+          </div>
+          <div class="sector-item" style="margin-bottom:0">
+            <div class="sector-top"><span class="sector-name">🤝 Human Services</span><span class="sector-pct">55%</span></div>
+            <div class="progress-bar"><div class="progress-fill" style="width:55%; background: linear-gradient(90deg, var(--gold), #E8C87A)"></div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Quick AI Actions</span>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px">
+            <button class="topbar-btn btn-outline" style="padding:10px; border-radius:10px; font-size:12.5px" onclick="showPage('lessonplan', null)">✨ Generate Lesson Plan</button>
+            <button class="topbar-btn btn-outline" style="padding:10px; border-radius:10px; font-size:12.5px" onclick="showPage('assessments', null)">📝 Create Assessment</button>
+            <button class="topbar-btn btn-outline" style="padding:10px; border-radius:10px; font-size:12.5px" onclick="showPage('reports', null)">📊 Generate Report</button>
+            <button class="topbar-btn btn-primary" style="padding:10px; border-radius:10px; font-size:12.5px" onclick="showPage('chat', null)">💬 Ask AI Anything</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="dashboard-col">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-title">Reminders</span>
+            <span class="card-action" onclick="showPage('notifications', null)">All →</span>
+          </div>
+          <div class="reminder-item">
+            <div class="reminder-icon urgent">⚠️</div>
+            <div class="reminder-text">
+              <strong>Submit Assessment by Today</strong>
+              Portfolio evaluation for Kitchen Garden Project due at EOD.
+              <div class="reminder-time">Today · 5:00 PM</div>
+            </div>
+          </div>
+          <div class="reminder-item">
+            <div class="reminder-icon info">📅</div>
+            <div class="reminder-text">
+              <strong>Field Visit This Friday</strong>
+              Nursery visit for Biodiversity Register confirmed.
+              <div class="reminder-time">Fri, Apr 4</div>
+            </div>
+          </div>
+          <div class="reminder-item">
+            <div class="reminder-icon success">✅</div>
+            <div class="reminder-text">
+              <strong>Next Activity Ready</strong>
+              Activity 7: Plant height measurement scheduled.
+              <div class="reminder-time">Tomorrow</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-card">
+          <div class="story-badge">⭐ Story of the Week</div>
+          <h4>"From Waste to Wealth — Our Vermicompost Journey"</h4>
+          <p>Students discovered how earthworms transform kitchen waste into nutrient-rich soil, transforming their schoolyard corner into a thriving garden.</p>
+          <div class="story-meta">
+            <div class="story-avatar">SP</div>
+            <span class="story-meta-text">Sunita Patil · Navjeevan School, Nashik</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ AI LESSON PLAN GENERATOR ══ -->
+  <div class="content" id="page-lessonplan">
+    <div class="page-header">
+      <h2>✨ AI Lesson Plan Generator</h2>
+      <p>Generate structured, NEP 2020-aligned lesson plans in minutes — powered by AI</p>
+    </div>
+
+    <!-- Step wizard -->
+    <div class="step-wizard">
+      <div class="step active" id="sw1"><div class="step-num">1</div><div class="step-label">Plan Type & Context</div></div>
+      <div class="step" id="sw2"><div class="step-num">2</div><div class="step-label">Select Activity</div></div>
+      <div class="step" id="sw3"><div class="step-num">3</div><div class="step-label">Choose Sections</div></div>
+      <div class="step" id="sw4" style="display:none"><div class="step-num">4</div><div class="step-label">Customise</div></div>
+      <div class="step" id="sw5"><div class="step-num" id="sw5-num">4</div><div class="step-label">Generate & Refine</div></div>
+    </div>
+
+    <!-- STEP 1: Plan type + context -->
+    <div class="step-panel active" id="sp1">
+      <div class="plan-types">
+        <div class="plan-type-card selected" onclick="selectPlanType(this,'project')" id="pt-project">
+
+          <div class="plan-icon">📋</div>
+          <h3>Project-Based Master Plan</h3>
+          <p>Complete lesson plan covering all 60 periods for a full project (e.g., Kitchen Garden)</p>
+        </div>
+        <div class="plan-type-card" onclick="selectPlanType(this,'activity')" id="pt-activity">
+          <div class="plan-icon">🎯</div>
+          <h3>Activity-Based Lesson Plan</h3>
+          <p>Focused lesson plan for one specific activity — includes tools, materials, steps</p>
+        </div>
+        <div class="plan-type-card" onclick="selectPlanType(this,'custom')" id="pt-custom">
+          <div class="plan-icon">⚙️</div>
+          <h3>Specific Requirement Plan</h3>
+          <p>Customised for your constraints — time, materials, student level, resources available</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3 style="font-family:'Syne',sans-serif;font-size:16px;font-weight:700;margin-bottom:18px">Class & Subject Context</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Class / Grade</label>
+            <select class="form-select" id="sel-class" onchange="updateContext()">
+              <option value="">Select Grade</option>
+              <option value="6">Grade 6</option>
+              <option value="7">Grade 7</option>
+              <option value="8">Grade 8</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Topic / Sector</label>
+            <select class="form-select" id="sel-topic" onchange="updateProjectList()">
+              <option value="">Select Topic</option>
+              <option value="life">Work with Life Forms</option>
+              <option value="machines">Work with Machines & Materials</option>
+              <option value="human">Work in Human Service</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Project</label>
+            <select class="form-select" id="sel-project" onchange="updateContext()">
+              <option value="">Select Project</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="step-nav">
+        <div></div>
+        <button class="btn-step btn-next" onclick="goToStep(2)">Next: Select Activity →</button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Activity selection -->
+    <div class="step-panel" id="sp2">
+      <div class="context-bar" id="ctx-bar">
+        <strong id="ctx-grade">Grade 6</strong> <span class="ctx-sep">·</span>
+        <strong id="ctx-topic">Life Forms</strong> <span class="ctx-sep">·</span>
+        <span id="ctx-project">Kitchen Garden</span>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-title">Select One Activity</span><span style="font-size:12px;color:var(--ink-mid)">Click to select → proceed</span></div>
+        <div class="activity-list" id="activity-list">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+      <div class="step-nav">
+        <button class="btn-step btn-back" onclick="goToStep(1)">← Back</button>
+        <button class="btn-step btn-next" onclick="goToStep(3)">Next: Choose Sections →</button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Section selector -->
+    <div class="step-panel" id="sp3">
+      <div class="context-bar">
+        <strong id="ctx-activity-name">Activity 4 · Seed Sowing</strong>
+        <span class="ctx-sep">·</span> <span>Select what to generate</span>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-title">What would you like to generate?</span><span style="font-size:12px;color:var(--ink-mid)">Select one or more sections</span></div>
+        <div class="section-grid">
+          <div class="section-chip full" onclick="selectFullPlan(this)" id="chip-full">⚡ Full Lesson Plan (All Sections)</div>
+          <div class="section-chip" onclick="toggleChip(this,'objective')" id="chip-objective">🎯 Objective</div>
+          <div class="section-chip" onclick="toggleChip(this,'materials')" id="chip-materials">🧰 Materials</div>
+          <div class="section-chip" onclick="toggleChip(this,'intro')" id="chip-intro">💡 Introduction</div>
+          <div class="section-chip" onclick="toggleChip(this,'activity')" id="chip-activity">🔬 Activity Steps</div>
+          <div class="section-chip" onclick="toggleChip(this,'group')" id="chip-group">👥 Group Work</div>
+          <div class="section-chip" onclick="toggleChip(this,'discussion')" id="chip-discussion">💬 Discussion Questions</div>
+          <div class="section-chip" onclick="toggleChip(this,'conclusion')" id="chip-conclusion">✅ Conclusion</div>
+          <div class="section-chip" onclick="toggleChip(this,'assessment')" id="chip-assessment">📝 Assessment</div>
+        </div>
+      </div>
+      <div class="step-nav">
+        <button class="btn-step btn-back" onclick="goToStep(2)">← Back</button>
+        <button class="btn-step btn-next" onclick="goToNextFromStep3()">Next →</button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Customise -->
+    <div class="step-panel" id="sp4">
+      <div class="card">
+        <div class="card-header"><span class="card-title">Customise Your Lesson Plan</span><span style="font-size:12px;color:var(--ink-mid)">Tailor to your classroom needs</span></div>
+        <div class="custom-grid">
+          <div class="form-group">
+            <label class="form-label">Time Duration</label>
+            <select class="form-select" id="sel-duration">
+              <option>35 min (1 Period)</option>
+              <option>70 min (2 Periods)</option>
+              <option>1-Day Activity</option>
+              <option>1-Week Project</option>
+              <option>1-Month Project</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Student Level</label>
+            <select class="form-select" id="sel-level">
+              <option>Beginner (Basic concepts)</option>
+              <option selected>Intermediate (Standard)</option>
+              <option>Advanced (Extended learning)</option>
+              <option>Mixed Ability Classroom</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Number of Students</label>
+            <input type="number" class="form-input" id="inp-students" value="35" min="1" max="60">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Language</label>
+            <select class="form-select" id="sel-language">
+              <option>English</option>
+              <option>Hindi</option>
+              <option>Marathi</option>
+              <option>English + Marathi</option>
+            </select>
+          </div>
+        </div>
+        <div class="section-divider">Available Resources</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0">
+          <div class="toggle-row">
+            <span class="toggle-label">Internet Available</span>
+            <div class="toggle"><input type="checkbox" id="chk-internet" checked> Yes</div>
+          </div>
+          <div class="toggle-row" style="padding-left:24px">
+            <span class="toggle-label">Projector/Screen</span>
+            <div class="toggle"><input type="checkbox" id="chk-projector"> Yes</div>
+          </div>
+          <div class="toggle-row">
+            <span class="toggle-label">Lab/Garden Access</span>
+            <div class="toggle"><input type="checkbox" id="chk-lab" checked> Yes</div>
+          </div>
+          <div class="toggle-row" style="padding-left:24px">
+            <span class="toggle-label">Include Subject Links</span>
+            <div class="toggle"><input type="checkbox" id="chk-subjects" checked> Yes</div>
+          </div>
+        </div>
+        <div class="form-group" style="margin-top:16px">
+          <label class="form-label">Additional Notes / Special Requirements (optional)</label>
+          <textarea class="form-input" id="inp-notes" placeholder="e.g., Some students are differently abled. Focus on teamwork. School has no garden — simulate with pots..."></textarea>
+        </div>
+      </div>
+      <div class="step-nav">
+        <button class="btn-step btn-back" onclick="goToStep(3)">← Back</button>
+        <button class="btn-step btn-next" onclick="goToStep(5)">Next: Generate →</button>
+      </div>
+    </div>
+
+    <!-- STEP 5: Generate + output -->
+    <div class="step-panel" id="sp5">
+      <div class="context-bar" id="final-ctx-bar">
+        <strong>Grade 6</strong> <span class="ctx-sep">·</span> Kitchen Garden <span class="ctx-sep">·</span> Activity 4: Seed Sowing <span class="ctx-sep">·</span> 35 min <span class="ctx-sep">·</span> 35 students
+      </div>
+      <button class="generate-btn" id="gen-btn" onclick="generateLessonPlan()">
+        <span>✨</span> <span id="gen-btn-text">Generate Lesson Plan with AI</span>
+      </button>
+
+      <div class="output-area" id="output-area">
+        <div class="output-header">
+          <div>
+            <h3 id="output-title">Lesson Plan Generated</h3>
+            <div style="font-size:11px;opacity:0.6;margin-top:2px" id="output-meta">Grade 6 · Kitchen Garden · Seed Sowing</div>
+          </div>
+          <div class="output-actions">
+            <button class="output-btn" onclick="copyOutput()">📋 Copy</button>
+            <button class="output-btn" onclick="printOutput()">🖨 Print</button>
+          </div>
+        </div>
+        <div class="output-body" id="output-body">
+          <div class="output-loading" id="output-loading">
+            <div class="loading-dots"><span></span><span></span><span></span></div>
+            Generating your lesson plan with AI…
+          </div>
+        </div>
+        <div style="padding:14px 20px;border-top:var(--border);background:var(--cream);border-radius:0 0 var(--radius) var(--radius)">
+          <div style="font-size:11.5px;font-weight:600;color:var(--ink-mid);margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px">Refine this plan:</div>
+          <div class="refinement-chips" id="refine-chips">
+            <div class="refine-chip" onclick="refinePlan('Simplify this plan for beginner teachers')">🔽 Simplify Plan</div>
+            <div class="refine-chip" onclick="refinePlan('Add 2 more hands-on activities to this lesson')">➕ Add More Activities</div>
+            <div class="refine-chip" onclick="refinePlan('Add practical teaching tips and classroom management strategies')">💡 Add Teaching Tips</div>
+            <div class="refine-chip" onclick="refinePlan('Generate 5 discussion questions for this lesson')">💬 More Discussion Questions</div>
+            <div class="refine-chip" onclick="refinePlan('Make this suitable for a mixed-ability classroom')">♿ Mixed Ability Version</div>
+            <div class="refine-chip" onclick="refinePlan('Connect this lesson to Maths, Science, and Language skills')">🔗 Add Subject Links</div>
+          </div>
+        </div>
+      </div>
+      <div class="step-nav">
+        <button class="btn-step btn-back" onclick="goBackFromStep5()">← Back</button>
+        <button class="btn-step btn-next" onclick="goToStep(1);resetWizard()">🔄 New Plan</button>
+      </div>
+    </div>
+  </div>
+  <!-- ── ASSESSMENTS (full) ── -->
+  <div class="content" id="page-assessments">
+    <div class="page-header"><h2>📝 Assessments</h2><p>Pre-designed sheets · Student entry · Auto report generation</p></div>
+
+    <!-- Assessment type selector -->
+    <div class="assessment-types">
+      <div class="assessment-type sel" onclick="selectAssessment(this,'writing')">
+        <div class="a-icon">✍️</div>
+        <h4>Written</h4>
+        <p>30 marks total</p>
+      </div>
+      <div class="assessment-type" onclick="selectAssessment(this,'oral')">
+        <div class="a-icon">🗣️</div>
+        <h4>Oral</h4>
+        <p>30 marks total</p>
+      </div>
+      <div class="assessment-type" onclick="selectAssessment(this,'portfolio')">
+        <div class="a-icon">📁</div>
+        <h4>Portfolio</h4>
+        <p>10 marks total</p>
+      </div>
+      <div class="assessment-type" onclick="selectAssessment(this,'activity')">
+        <div class="a-icon">📖</div>
+        <h4>Activity Book</h4>
+        <p>Textbook tasks</p>
+      </div>
+      <div class="assessment-type" onclick="selectAssessment(this,'observations')">
+        <div class="a-icon">👁️</div>
+        <h4>Observations</h4>
+        <p>20 marks total</p>
+      </div>
+    </div>
+
+    <!-- ── WRITTEN ASSESSMENT ── -->
+    <div class="as-panel active" id="as-writing">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+        <!-- Pre-designed sheet download -->
+        <div class="card">
+          <div class="card-header"><span class="card-title">📥 Pre-Designed Assessment Sheet</span></div>
+          <p style="font-size:13px;color:var(--ink-mid);margin-bottom:16px">Download the standardized Written Assessment template aligned to the Kitchen Garden project rubric.</p>
+          <div style="background:var(--cream);border:1.5px dashed var(--cream-dark);border-radius:12px;padding:20px;text-align:center;margin-bottom:16px">
+            <div style="font-size:40px;margin-bottom:8px">📄</div>
+            <div style="font-size:14px;font-weight:700;margin-bottom:4px">Written Assessment — Kitchen Garden</div>
+            <div style="font-size:12px;color:var(--ink-mid)">Grade 6 · 30 Marks · 4 Sections</div>
+          </div>
+          <div style="display:flex;gap:10px">
+            <button class="topbar-btn btn-outline" style="flex:1;padding:10px" onclick="alert('Downloading PDF…')">📥 Download PDF</button>
+            <button class="topbar-btn btn-outline" style="flex:1;padding:10px" onclick="alert('Downloading Excel…')">📊 Download Excel</button>
+          </div>
+        </div>
+
+        <!-- Rubric -->
+        <div class="card">
+          <div class="card-header"><span class="card-title">✍️ Written Assessment Rubric</span></div>
+          <div class="rubric-row"><span>Concept Understanding</span><span class="rubric-marks">/ 10</span></div>
+          <div class="rubric-row"><span>Accuracy of Information</span><span class="rubric-marks">/ 8</span></div>
+          <div class="rubric-row"><span>Language & Expression</span><span class="rubric-marks">/ 7</span></div>
+          <div class="rubric-row"><span>Presentation & Neatness</span><span class="rubric-marks">/ 5</span></div>
+          <div class="rubric-row" style="font-weight:700"><span>Total</span><span class="rubric-marks">/ 30</span></div>
+        </div>
+      </div>
+
+      <!-- Fill student scores -->
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">📋 Enter Student Scores — Written Assessment</span>
+          <button class="topbar-btn btn-primary" style="font-size:12px;padding:7px 14px" onclick="generateAutoReport('written')">✨ Generate Auto Report</button>
+        </div>
+        <p style="font-size:12.5px;color:var(--ink-mid);margin-bottom:16px">Enter marks for each student. Auto-report will be generated with analysis and recommendations.</p>
+        <table class="plan-table">
+          <thead><tr><th>Student Name</th><th>Concept (/ 10)</th><th>Accuracy (/ 8)</th><th>Language (/ 7)</th><th>Presentation (/ 5)</th><th>Total (/ 30)</th></tr></thead>
+          <tbody>
+            <tr><td>Anjali Sharma</td><td><input class="score-input" type="number" min="0" max="10" value="8" oninput="calcTotal(this)"></td><td><input class="score-input" type="number" min="0" max="8" value="7"></td><td><input class="score-input" type="number" min="0" max="7" value="6"></td><td><input class="score-input" type="number" min="0" max="5" value="4"></td><td><span class="score-total">25/30</span></td></tr>
+            <tr><td>Ravi Patil</td><td><input class="score-input" type="number" min="0" max="10" value="6"></td><td><input class="score-input" type="number" min="0" max="8" value="5"></td><td><input class="score-input" type="number" min="0" max="7" value="5"></td><td><input class="score-input" type="number" min="0" max="5" value="3"></td><td><span class="score-total">19/30</span></td></tr>
+            <tr><td>Sneha More</td><td><input class="score-input" type="number" min="0" max="10" value="9"></td><td><input class="score-input" type="number" min="0" max="8" value="8"></td><td><input class="score-input" type="number" min="0" max="7" value="7"></td><td><input class="score-input" type="number" min="0" max="5" value="5"></td><td><span class="score-total">29/30</span></td></tr>
+            <tr><td>Arjun Desai</td><td><input class="score-input" type="number" min="0" max="10" value=""></td><td><input class="score-input" type="number" min="0" max="8" value=""></td><td><input class="score-input" type="number" min="0" max="7" value=""></td><td><input class="score-input" type="number" min="0" max="5" value=""></td><td><span class="score-total">—</span></td></tr>
+            <tr><td>Kavya Joshi</td><td><input class="score-input" type="number" min="0" max="10" value=""></td><td><input class="score-input" type="number" min="0" max="8" value=""></td><td><input class="score-input" type="number" min="0" max="7" value=""></td><td><input class="score-input" type="number" min="0" max="5" value=""></td><td><span class="score-total">—</span></td></tr>
+          </tbody>
+        </table>
+
+        <!-- Auto report output -->
+        <div class="auto-report" id="report-written" style="display:none">
+          <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;margin-bottom:12px">📊 Auto-Generated Report — Written Assessment</div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px">
+            <div style="background:rgba(122,158,126,0.1);border-radius:10px;padding:14px;text-align:center"><div style="font-size:24px;font-weight:800;color:#22C55E;font-family:'Syne',sans-serif">24.3</div><div style="font-size:11px;color:var(--ink-mid)">Class Average / 30</div></div>
+            <div style="background:rgba(91,141,184,0.1);border-radius:10px;padding:14px;text-align:center"><div style="font-size:24px;font-weight:800;color:var(--sky);font-family:'Syne',sans-serif">81%</div><div style="font-size:11px;color:var(--ink-mid)">Pass Rate</div></div>
+            <div style="background:rgba(212,168,75,0.1);border-radius:10px;padding:14px;text-align:center"><div style="font-size:24px;font-weight:800;color:var(--gold);font-family:'Syne',sans-serif">Sneha</div><div style="font-size:11px;color:var(--ink-mid)">Top Performer</div></div>
+          </div>
+          <div style="font-size:13px;color:var(--ink-mid);line-height:1.6;background:var(--cream);border-radius:10px;padding:14px">
+            <strong style="color:var(--ink)">Key Observations:</strong> Most students scored well on Concept Understanding. Accuracy and Language need improvement for 3 students. Recommend a revision session on Activity 3 content before next assessment.
+          </div>
+          <div style="display:flex;gap:10px;margin-top:16px">
+            <button class="topbar-btn btn-outline" onclick="alert('Exporting PDF…')">📥 Export Report PDF</button>
+            <button class="topbar-btn btn-outline" onclick="alert('Exporting Excel…')">📊 Export Report Excel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── ORAL ASSESSMENT ── -->
+    <div class="as-panel" id="as-oral">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+        <div class="card">
+          <div class="card-header"><span class="card-title">📥 Pre-Designed Sheet — Oral</span></div>
+          <div style="background:var(--cream);border:1.5px dashed var(--cream-dark);border-radius:12px;padding:20px;text-align:center;margin-bottom:16px">
+            <div style="font-size:40px;margin-bottom:8px">🗣️</div>
+            <div style="font-size:14px;font-weight:700;margin-bottom:4px">Oral Assessment Template</div>
+            <div style="font-size:12px;color:var(--ink-mid)">Grade 6 · 30 Marks · Q&A Evaluation</div>
+          </div>
+          <div style="display:flex;gap:10px">
+            <button class="topbar-btn btn-outline" style="flex:1;padding:10px" onclick="alert('Downloading PDF…')">📥 Download PDF</button>
+            <button class="topbar-btn btn-outline" style="flex:1;padding:10px" onclick="alert('Downloading Excel…')">📊 Download Excel</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">🗣️ Oral Assessment Rubric</span></div>
+          <div class="rubric-row"><span>Understanding of Topic</span><span class="rubric-marks">/ 10</span></div>
+          <div class="rubric-row"><span>Answering Ability</span><span class="rubric-marks">/ 10</span></div>
+          <div class="rubric-row"><span>Confidence & Delivery</span><span class="rubric-marks">/ 10</span></div>
+          <div class="rubric-row" style="font-weight:700"><span>Total</span><span class="rubric-marks">/ 30</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-title">📋 Enter Student Scores — Oral</span><button class="topbar-btn btn-primary" style="font-size:12px;padding:7px 14px" onclick="generateAutoReport('oral')">✨ Generate Auto Report</button></div>
+        <table class="plan-table">
+          <thead><tr><th>Student Name</th><th>Understanding (/ 10)</th><th>Answering (/ 10)</th><th>Confidence (/ 10)</th><th>Total (/ 30)</th></tr></thead>
+          <tbody>
+            <tr><td>Anjali Sharma</td><td><input class="score-input" type="number" value="9"></td><td><input class="score-input" type="number" value="8"></td><td><input class="score-input" type="number" value="9"></td><td><span class="score-total">26/30</span></td></tr>
+            <tr><td>Ravi Patil</td><td><input class="score-input" type="number" value="7"></td><td><input class="score-input" type="number" value="6"></td><td><input class="score-input" type="number" value="7"></td><td><span class="score-total">20/30</span></td></tr>
+            <tr><td>Sneha More</td><td><input class="score-input" type="number" value="10"></td><td><input class="score-input" type="number" value="9"></td><td><input class="score-input" type="number" value="10"></td><td><span class="score-total">29/30</span></td></tr>
+            <tr><td>Arjun Desai</td><td><input class="score-input" type="number" value=""></td><td><input class="score-input" type="number" value=""></td><td><input class="score-input" type="number" value=""></td><td><span class="score-total">—</span></td></tr>
+          </tbody>
+        </table>
+        <div class="auto-report" id="report-oral" style="display:none">
+          <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;margin-bottom:12px">📊 Auto-Generated Report — Oral Assessment</div>
+          <div style="font-size:13px;color:var(--ink-mid);line-height:1.6;background:var(--cream);border-radius:10px;padding:14px">Oral assessment shows strong conceptual grasp. Students need encouragement in delivery and confidence. Recommend peer-to-peer speaking exercises.</div>
+          <div style="display:flex;gap:10px;margin-top:12px"><button class="topbar-btn btn-outline" onclick="alert('Exporting…')">📥 Export PDF</button><button class="topbar-btn btn-outline" onclick="alert('Exporting…')">📊 Export Excel</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PORTFOLIO ── -->
+    <div class="as-panel" id="as-portfolio">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+        <div class="card">
+          <div class="card-header"><span class="card-title">📥 Pre-Designed Sheet — Portfolio</span></div>
+          <div style="background:var(--cream);border:1.5px dashed var(--cream-dark);border-radius:12px;padding:20px;text-align:center;margin-bottom:16px">
+            <div style="font-size:40px;margin-bottom:8px">📁</div>
+            <div style="font-size:14px;font-weight:700;margin-bottom:4px">"From Seed to Life" Portfolio</div>
+            <div style="font-size:12px;color:var(--ink-mid)">Grade 6 · 10 Marks · 10-page student work</div>
+          </div>
+          <div style="display:flex;gap:10px">
+            <button class="topbar-btn btn-outline" style="flex:1;padding:10px" onclick="alert('Downloading PDF…')">📥 Download PDF</button>
+            <button class="topbar-btn btn-outline" style="flex:1;padding:10px" onclick="alert('Downloading Excel…')">📊 Download Excel</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">📁 Portfolio Rubric</span></div>
+          <div class="rubric-row"><span>Creativity</span><span class="rubric-marks">/ 3</span></div>
+          <div class="rubric-row"><span>Original Thinking</span><span class="rubric-marks">/ 3</span></div>
+          <div class="rubric-row"><span>Effort</span><span class="rubric-marks">/ 2</span></div>
+          <div class="rubric-row"><span>Neatness</span><span class="rubric-marks">/ 2</span></div>
+          <div class="rubric-row" style="font-weight:700"><span>Total</span><span class="rubric-marks">/ 10</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-title">📋 Enter Portfolio Scores</span><button class="topbar-btn btn-primary" style="font-size:12px;padding:7px 14px" onclick="generateAutoReport('portfolio')">✨ Generate Auto Report</button></div>
+        <table class="plan-table">
+          <thead><tr><th>Student Name</th><th>Creativity (/ 3)</th><th>Original (/ 3)</th><th>Effort (/ 2)</th><th>Neatness (/ 2)</th><th>Total (/ 10)</th></tr></thead>
+          <tbody>
+            <tr><td>Anjali Sharma</td><td><input class="score-input" type="number" value="3"></td><td><input class="score-input" type="number" value="2"></td><td><input class="score-input" type="number" value="2"></td><td><input class="score-input" type="number" value="2"></td><td><span class="score-total">9/10</span></td></tr>
+            <tr><td>Ravi Patil</td><td><input class="score-input" type="number" value="2"></td><td><input class="score-input" type="number" value="2"></td><td><input class="score-input" type="number" value="1"></td><td><input class="score-input" type="number" value="2"></td><td><span class="score-total">7/10</span></td></tr>
+            <tr><td>Sneha More</td><td><input class="score-input" type="number" value="3"></td><td><input class="score-input" type="number" value="3"></td><td><input class="score-input" type="number" value="2"></td><td><input class="score-input" type="number" value="2"></td><td><span class="score-total">10/10</span></td></tr>
+          </tbody>
+        </table>
+        <div class="auto-report" id="report-portfolio" style="display:none">
+          <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;margin-bottom:12px">📊 Auto-Generated Report — Portfolio</div>
+          <div style="font-size:13px;color:var(--ink-mid);line-height:1.6;background:var(--cream);border-radius:10px;padding:14px">Portfolio scores are excellent — class average is 8.7/10. Sneha More achieved a perfect score. Recommend displaying top portfolios at school exhibition.</div>
+          <div style="display:flex;gap:10px;margin-top:12px"><button class="topbar-btn btn-outline" onclick="alert('Exporting…')">📥 Export PDF</button><button class="topbar-btn btn-outline" onclick="alert('Exporting…')">📊 Export Excel</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── ACTIVITY BOOK ── -->
+    <div class="as-panel" id="as-activity">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+        <div class="card">
+          <div class="card-header"><span class="card-title">📥 Activity Book Assessment Sheet</span></div>
+          <div style="background:var(--cream);border:1.5px dashed var(--cream-dark);border-radius:12px;padding:20px;text-align:center;margin-bottom:16px">
+            <div style="font-size:40px;margin-bottom:8px">📖</div>
+            <div style="font-size:14px;font-weight:700;margin-bottom:4px">Activity Book Evaluation</div>
+            <div style="font-size:12px;color:var(--ink-mid)">Textbook-aligned tasks completion tracking</div>
+          </div>
+          <div style="display:flex;gap:10px">
+            <button class="topbar-btn btn-outline" style="flex:1;padding:10px" onclick="alert('Downloading PDF…')">📥 Download PDF</button>
+            <button class="topbar-btn btn-outline" style="flex:1;padding:10px" onclick="alert('Downloading Excel…')">📊 Download Excel</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">📖 Activity Book Rubric</span></div>
+          <div class="rubric-row"><span>Task Completion</span><span class="rubric-marks">/ 5</span></div>
+          <div class="rubric-row"><span>Accuracy</span><span class="rubric-marks">/ 5</span></div>
+          <div class="rubric-row"><span>Diagrams / Illustrations</span><span class="rubric-marks">/ 5</span></div>
+          <div class="rubric-row" style="font-weight:700"><span>Total</span><span class="rubric-marks">/ 15</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-title">📋 Enter Activity Book Scores</span><button class="topbar-btn btn-primary" style="font-size:12px;padding:7px 14px" onclick="generateAutoReport('activity')">✨ Generate Auto Report</button></div>
+        <table class="plan-table">
+          <thead><tr><th>Student</th><th>Completion (/ 5)</th><th>Accuracy (/ 5)</th><th>Diagrams (/ 5)</th><th>Total</th></tr></thead>
+          <tbody>
+            <tr><td>Anjali</td><td><input class="score-input" type="number" value="5"></td><td><input class="score-input" type="number" value="4"></td><td><input class="score-input" type="number" value="4"></td><td><span class="score-total">13/15</span></td></tr>
+            <tr><td>Ravi</td><td><input class="score-input" type="number" value="4"></td><td><input class="score-input" type="number" value="3"></td><td><input class="score-input" type="number" value="3"></td><td><span class="score-total">10/15</span></td></tr>
+          </tbody>
+        </table>
+        <div class="auto-report" id="report-activity" style="display:none">
+          <div style="font-size:13px;color:var(--ink-mid);background:var(--cream);border-radius:10px;padding:14px;margin-top:16px">Activity Book report generated. Class average: 11.5/15. Good completion rate; diagram quality can be improved with more observation practice.</div>
+          <div style="display:flex;gap:10px;margin-top:12px"><button class="topbar-btn btn-outline" onclick="alert('Exporting…')">📥 Export PDF</button><button class="topbar-btn btn-outline" onclick="alert('Exporting…')">📊 Export Excel</button></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── OBSERVATIONS ── -->
+    <div class="as-panel" id="as-observations">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+        <div class="card">
+          <div class="card-header"><span class="card-title">📥 Observations Assessment Sheet</span></div>
+          <div style="background:var(--cream);border:1.5px dashed var(--cream-dark);border-radius:12px;padding:20px;text-align:center;margin-bottom:16px">
+            <div style="font-size:40px;margin-bottom:8px">👁️</div>
+            <div style="font-size:14px;font-weight:700;margin-bottom:4px">Teacher Observation Sheet</div>
+            <div style="font-size:12px;color:var(--ink-mid)">Grade 6 · 20 Marks · Practical & Behaviour</div>
+          </div>
+          <div style="display:flex;gap:10px">
+            <button class="topbar-btn btn-outline" style="flex:1;padding:10px" onclick="alert('Downloading PDF…')">📥 Download PDF</button>
+            <button class="topbar-btn btn-outline" style="flex:1;padding:10px" onclick="alert('Downloading Excel…')">📊 Download Excel</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header"><span class="card-title">👁️ Observations Rubric</span></div>
+          <div class="rubric-row"><span>Participation</span><span class="rubric-marks">/ 5</span></div>
+          <div class="rubric-row"><span>Teamwork</span><span class="rubric-marks">/ 5</span></div>
+          <div class="rubric-row"><span>Practical Skills</span><span class="rubric-marks">/ 5</span></div>
+          <div class="rubric-row"><span>Safety & Responsibility</span><span class="rubric-marks">/ 5</span></div>
+          <div class="rubric-row" style="font-weight:700"><span>Total</span><span class="rubric-marks">/ 20</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-title">📋 Enter Observation Scores</span><button class="topbar-btn btn-primary" style="font-size:12px;padding:7px 14px" onclick="generateAutoReport('observations')">✨ Generate Auto Report</button></div>
+        <table class="plan-table">
+          <thead><tr><th>Student</th><th>Participation</th><th>Teamwork</th><th>Practical</th><th>Safety</th><th>Total / 20</th></tr></thead>
+          <tbody>
+            <tr><td>Anjali</td><td><input class="score-input" type="number" value="5"></td><td><input class="score-input" type="number" value="5"></td><td><input class="score-input" type="number" value="4"></td><td><input class="score-input" type="number" value="5"></td><td><span class="score-total">19/20</span></td></tr>
+            <tr><td>Ravi</td><td><input class="score-input" type="number" value="4"></td><td><input class="score-input" type="number" value="4"></td><td><input class="score-input" type="number" value="3"></td><td><input class="score-input" type="number" value="4"></td><td><span class="score-total">15/20</span></td></tr>
+            <tr><td>Sneha</td><td><input class="score-input" type="number" value="5"></td><td><input class="score-input" type="number" value="5"></td><td><input class="score-input" type="number" value="5"></td><td><input class="score-input" type="number" value="5"></td><td><span class="score-total">20/20</span></td></tr>
+          </tbody>
+        </table>
+        <div class="auto-report" id="report-observations" style="display:none">
+          <div style="font-size:13px;color:var(--ink-mid);background:var(--cream);border-radius:10px;padding:14px;margin-top:16px">Observation scores are strong. Class average: 18/20. Students demonstrate excellent participation and safety awareness. Practical skills need further development in 2 students.</div>
+          <div style="display:flex;gap:10px;margin-top:12px"><button class="topbar-btn btn-outline" onclick="alert('Exporting…')">📥 Export PDF</button><button class="topbar-btn btn-outline" onclick="alert('Exporting…')">📊 Export Excel</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── TIMETABLE ── -->
+  <div class="content" id="page-timetable">
+    <div class="page-header">
+      <h2>🗓️ Smart Timetable Planner</h2>
+      <p>Auto-calculates your schedule based on syllabus progress and remaining periods</p>
+    </div>
+
+    <!-- ── SCENARIO SIMULATOR ── -->
+    <div style="background:linear-gradient(135deg,#1A1208,#2D1A08);border-radius:20px;padding:24px;color:#fff;margin-bottom:24px;position:relative;overflow:hidden">
+      <div style="position:absolute;inset:0;background:radial-gradient(circle at 80% 50%,rgba(200,75,47,0.18),transparent 60%)"></div>
+      <div style="position:relative">
+        <div style="font-size:11px;font-weight:700;letter-spacing:2px;opacity:0.5;text-transform:uppercase;margin-bottom:6px">📊 Scenario Simulator</div>
+        <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800;margin-bottom:4px">Auto-Schedule Calculator</div>
+        <div style="font-size:13px;opacity:0.7;margin-bottom:20px">Adjust syllabus completion & pending periods — your schedule regenerates instantly</div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px">
+          <div>
+            <label style="font-size:11px;font-weight:600;letter-spacing:1px;opacity:0.6;text-transform:uppercase;display:block;margin-bottom:6px">Syllabus Completed (%)</label>
+            <div style="display:flex;align-items:center;gap:10px">
+              <input type="range" id="tt-syllabus" min="0" max="100" value="50" oninput="updateTimetable()" style="flex:1;accent-color:#C84B2F">
+              <span id="tt-syllabus-val" style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#E86040;min-width:44px">50%</span>
+            </div>
+          </div>
+          <div>
+            <label style="font-size:11px;font-weight:600;letter-spacing:1px;opacity:0.6;text-transform:uppercase;display:block;margin-bottom:6px">Periods Remaining</label>
+            <div style="display:flex;align-items:center;gap:10px">
+              <input type="range" id="tt-periods" min="5" max="63" value="20" oninput="updateTimetable()" style="flex:1;accent-color:#D4A84B">
+              <span id="tt-periods-val" style="font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:#D4A84B;min-width:30px">20</span>
+            </div>
+          </div>
+          <div>
+            <label style="font-size:11px;font-weight:600;letter-spacing:1px;opacity:0.6;text-transform:uppercase;display:block;margin-bottom:6px">Current Term</label>
+            <select id="tt-term" onchange="updateTimetable()" style="width:100%;padding:8px 12px;border-radius:10px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff;font-family:'DM Sans',sans-serif;font-size:13px">
+              <option value="1">Term 1 — Kitchen Garden</option>
+              <option value="2">Term 2 — Biodiversity Register</option>
+              <option value="3" selected>Term 3 — Maker Skills</option>
+            </select>
+          </div>
+        </div>
+        <!-- Smart Alert Banner -->
+        <div id="tt-alert-banner" style="background:rgba(200,75,47,0.25);border:1px solid rgba(200,75,47,0.5);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:12px">
+          <span style="font-size:22px">⚠️</span>
+          <div>
+            <div style="font-weight:700;font-size:13.5px" id="tt-alert-title">Compressed Schedule Needed</div>
+            <div style="font-size:12.5px;opacity:0.8;margin-top:2px" id="tt-alert-msg">50% syllabus remains with only 20 periods. AI will prioritize high-weightage topics.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── TERM OVERVIEW ── -->
+    <div class="timetable-overview" style="margin-bottom:24px">
+      <div class="term-card" style="border-top:3px solid var(--sage)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <h3>Term 1</h3><span style="font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(122,158,126,0.15);color:var(--sage);font-weight:700">✓ Done</span>
+        </div>
+        <div class="term-periods" style="color:var(--sage)">63</div>
+        <div class="term-sub">periods · Kitchen Garden</div>
+        <div class="term-dates">Jun – Sep 2025</div>
+        <div class="progress-bar" style="margin-top:10px"><div class="progress-fill" style="width:100%;background:var(--sage)"></div></div>
+        <div style="font-size:11px;color:var(--ink-mid);margin-top:6px">✅ 63/63 periods used · 100% syllabus</div>
+      </div>
+      <div class="term-card" style="border-top:3px solid var(--sky)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <h3>Term 2</h3><span style="font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(91,141,184,0.15);color:var(--sky);font-weight:700">✓ Done</span>
+        </div>
+        <div class="term-periods" style="color:var(--sky)">63</div>
+        <div class="term-sub">periods · Biodiversity Register</div>
+        <div class="term-dates">Oct 2025 – Jan 2026</div>
+        <div class="progress-bar" style="margin-top:10px"><div class="progress-fill" style="width:100%;background:var(--sky)"></div></div>
+        <div style="font-size:11px;color:var(--ink-mid);margin-top:6px">✅ 63/63 periods used · 100% syllabus</div>
+      </div>
+      <div class="term-card" style="border-top:3px solid var(--terracotta)">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start">
+          <h3>Term 3</h3><span id="t3-status-pill" style="font-size:10px;padding:2px 8px;border-radius:20px;background:rgba(200,75,47,0.12);color:var(--terracotta);font-weight:700">🔴 Active</span>
+        </div>
+        <div class="term-periods" id="t3-used" style="color:var(--terracotta)">43</div>
+        <div class="term-sub" id="t3-sub">periods used · Maker Skills</div>
+        <div class="term-dates">Feb – May 2026</div>
+        <div class="progress-bar" style="margin-top:10px"><div class="progress-fill" id="t3-bar" style="width:68%;background:var(--terracotta)"></div></div>
+        <div style="font-size:11px;color:var(--ink-mid);margin-top:6px" id="t3-info">🔴 43/63 used · 20 remaining · 50% done</div>
+      </div>
+    </div>
+
+    <!-- ── AUTO-GENERATED SCHEDULE TABLE ── -->
+    <div class="card" style="margin-bottom:20px">
+      <div class="card-header">
+        <span class="card-title">🤖 AI-Generated Compressed Schedule</span>
+        <button class="topbar-btn btn-primary" style="font-size:12px;padding:7px 14px" onclick="regenerateSchedule()">🔄 Regenerate</button>
+      </div>
+      <div id="tt-scenario-label" style="background:rgba(200,75,47,0.08);border:1px solid rgba(200,75,47,0.2);border-radius:10px;padding:12px 16px;margin-bottom:16px;font-size:13px;color:var(--ink-mid)">
+        <strong style="color:var(--terracotta)">📌 Current Scenario:</strong> 50% syllabus complete · 20 periods remaining → Compact schedule with topic prioritization
+      </div>
+      <div style="overflow-x:auto">
+        <table class="tt-table" id="tt-schedule-table">
+          <thead>
+            <tr>
+              <th>Period No.</th><th>Topic / Activity</th><th>Type</th><th>Duration</th><th>Priority</th><th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="tt-schedule-body">
+            <!-- Filled by JS -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── WEEKLY BREAKDOWN ── -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+      <div class="card">
+        <div class="card-header"><span class="card-title">📅 Weekly Period Distribution</span></div>
+        <div id="tt-weekly-breakdown">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-title">📊 Period Type Breakdown</span></div>
+        <table class="tt-table" id="tt-type-table">
+          <thead><tr><th>Component</th><th>Periods</th><th>Hours</th><th>Type</th></tr></thead>
+          <tbody id="tt-type-body"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── SMART TIPS ── -->
+    <div class="card" id="tt-tips-card">
+      <div class="card-header"><span class="card-title">💡 Smart Teaching Tips for This Schedule</span></div>
+      <div id="tt-tips-body" style="display:flex;flex-direction:column;gap:10px"></div>
+    </div>
+  </div>
+
+  <!-- ── CHAT ── -->
+  <div class="content" id="page-chat">
+    <div class="page-header">
+      <h2>💬 Chat with Me</h2>
+      <p>AI-powered teaching assistant · Context-aware · Voice + Text</p>
+    </div>
+
+    <div class="chat-layout">
+      <div class="chat-sidebar">
+        <div class="chat-sidebar-header"><h3>Quick Prompts</h3></div>
+        <div class="quick-prompts">
+          <button class="quick-prompt-btn" onclick="sendPrompt('Explain this topic simply: Germination')"><span class="qp-icon">💡</span> Explain topic simply</button>
+          <button class="quick-prompt-btn" onclick="sendPrompt('Generate 5 MCQ questions for Kitchen Garden Activity 3')"><span class="qp-icon">📝</span> Generate quiz questions</button>
+          <button class="quick-prompt-btn" onclick="sendPrompt('What teaching strategy works best for hands-on activities?')"><span class="qp-icon">🎓</span> Teaching strategy help</button>
+          <button class="quick-prompt-btn" onclick="sendPrompt('Suggest a homework activity for vermicomposting lesson')"><span class="qp-icon">🏠</span> Suggest homework activity</button>
+          <button class="quick-prompt-btn" onclick="sendPrompt('How do I connect kitchen garden to the Maths syllabus?')"><span class="qp-icon">🔗</span> Cross-subject link</button>
+          <button class="quick-prompt-btn" onclick="sendPrompt('What are common student mistakes in seed sowing?')"><span class="qp-icon">⚠️</span> Common student mistakes</button>
+        </div>
+      </div>
+
+      <div class="chat-main">
+        <div class="chat-header">
+          <h3>🤖 Kaushal Saathi AI</h3>
+          <div style="display:flex;gap:8px">
+            <button class="voice-btn" title="Voice input">🎙️</button>
+            <span class="tag tag-green" style="padding:6px 12px; font-size:11.5px">● Online</span>
+          </div>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+          <div class="msg ai">
+            <div class="msg-label">Kaushal Saathi AI</div>
+            <div class="msg-bubble">
+              Namaste Priya! 👋 I'm your AI teaching assistant. I have full context of your Grade 6 curriculum, current project (Kitchen Garden), and your class progress.<br><br>
+              How can I help you today? You can ask about lesson planning, activity ideas, student doubts, or assessment support.
+            </div>
+          </div>
+        </div>
+        <div class="chat-input-area">
+          <div class="chat-input-row">
+            <input class="chat-input" id="chat-input" placeholder="Ask about lessons, activities, assessments…" onkeydown="if(event.key==='Enter') sendChat()">
+            <button class="voice-btn">🎙️</button>
+            <button class="send-btn" onclick="sendChat()">Send →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── NOTIFICATIONS ── -->
+  <div class="content" id="page-notifications">
+    <div class="page-header">
+      <h2>🔔 Important Notifications</h2>
+      <p>3 urgent · 2 informational · 1 announcement</p>
+    </div>
+
+    <div class="notif-list">
+      <div class="notif-card urgent">
+        <div class="notif-card-icon">⚠️</div>
+        <div class="notif-card-body">
+          <div class="notif-card-title">Submit Portfolio Assessment Today</div>
+          <div class="notif-card-text">The "From Seed to Life" portfolio evaluation is due by 5:00 PM today. 12 students pending submission.</div>
+          <div class="notif-card-time">Today · 9:15 AM</div>
+        </div>
+        <span class="notif-card-badge urgent">Urgent</span>
+      </div>
+
+      <div class="notif-card urgent">
+        <div class="notif-card-icon">📚</div>
+        <div class="notif-card-body">
+          <div class="notif-card-title">Lesson Progress Alert</div>
+          <div class="notif-card-text">Your Kitchen Garden lesson is 60% complete. Please proceed to Activity 6: Composting Basics.</div>
+          <div class="notif-card-time">Today · 8:00 AM</div>
+        </div>
+        <span class="notif-card-badge urgent">Action Needed</span>
+      </div>
+
+      <div class="notif-card info">
+        <div class="notif-card-icon">🗺️</div>
+        <div class="notif-card-body">
+          <div class="notif-card-title">Field Visit Confirmed — Friday</div>
+          <div class="notif-card-text">Nursery field visit for Biodiversity Register is confirmed for April 4. Transport arranged (school bus, 45 min travel).</div>
+          <div class="notif-card-time">Yesterday · 3:30 PM</div>
+        </div>
+        <span class="notif-card-badge info">Reminder</span>
+      </div>
+
+      <div class="notif-card success">
+        <div class="notif-card-icon">🏆</div>
+        <div class="notif-card-body">
+          <div class="notif-card-title">You're a Top Teacher This Week!</div>
+          <div class="notif-card-text">Congratulations! Your consistent engagement has earned you the "Most Active Teacher" recognition this week across Maharashtra region.</div>
+          <div class="notif-card-time">Yesterday · 6:00 PM</div>
+        </div>
+        <span class="notif-card-badge success">Achievement</span>
+      </div>
+
+      <div class="notif-card info">
+        <div class="notif-card-icon">📢</div>
+        <div class="notif-card-body">
+          <div class="notif-card-title">Platform Announcement</div>
+          <div class="notif-card-text">New gamified puzzles have been added for the Machines & Materials unit. Check the Gamified Zone to explore!</div>
+          <div class="notif-card-time">2 days ago</div>
+        </div>
+        <span class="notif-card-badge info">General</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── GAMIFIED ── -->
+  <div class="content" id="page-gamified">
+    <div class="streak-hero">
+      <div class="streak-fire">🔥</div>
+      <div class="streak-info">
+        <h2>12 Day Streak!</h2>
+        <p>Keep going — 3 more days for your next badge</p>
+        <div class="streak-milestones">
+          <div class="streak-milestone"><div class="sm-val">3</div><div class="sm-label">days → badge</div></div>
+          <div class="streak-milestone"><div class="sm-val">7</div><div class="sm-label">days → badge</div></div>
+          <div class="streak-milestone"><div class="sm-val">15</div><div class="sm-label">days → badge</div></div>
+          <div class="streak-milestone"><div class="sm-val">30</div><div class="sm-label">Super Learner</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="gamify-grid">
+      <div>
+        <div class="card" style="margin-bottom:20px">
+          <div class="card-header"><span class="card-title">🏅 Your Badges</span></div>
+          <div class="badge-grid">
+            <div class="badge-item earned"><div class="badge-icon">🥉</div><div class="badge-label">3-Day Streak</div><div class="badge-days">Earned!</div></div>
+            <div class="badge-item earned"><div class="badge-icon">🥈</div><div class="badge-label">7-Day Streak</div><div class="badge-days">Earned!</div></div>
+            <div class="badge-item"><div class="badge-icon">🥇</div><div class="badge-label">15-Day Streak</div><div class="badge-days">3 days left</div></div>
+            <div class="badge-item"><div class="badge-icon">⭐</div><div class="badge-label">Super Learner</div><div class="badge-days">18 days left</div></div>
+            <div class="badge-item earned"><div class="badge-icon">🏆</div><div class="badge-label">Quiz Champ</div><div class="badge-days">Earned!</div></div>
+            <div class="badge-item"><div class="badge-icon">📜</div><div class="badge-label">Excellence</div><div class="badge-days">Locked</div></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header"><span class="card-title">🧩 Syllabus Puzzles</span><span class="card-action">View All</span></div>
+          <div class="puzzle-card">
+            <div class="puzzle-type">🔀</div>
+            <div class="puzzle-info"><h4>Match the Following</h4><p>Tools ↔ Uses · Kitchen Garden</p></div>
+            <span class="puzzle-badge new">New</span>
+          </div>
+          <div class="puzzle-card">
+            <div class="puzzle-type">🔢</div>
+            <div class="puzzle-info"><h4>Sequence Puzzle</h4><p>Steps of Seed Sowing</p></div>
+            <span class="puzzle-badge done">Done ✓</span>
+          </div>
+          <div class="puzzle-card">
+            <div class="puzzle-type">🎯</div>
+            <div class="puzzle-info"><h4>KBC Quiz — Life Forms</h4><p>10 questions · 30 points</p></div>
+            <span class="puzzle-badge new">Play</span>
+          </div>
+          <div class="puzzle-card">
+            <div class="puzzle-type">🔍</div>
+            <div class="puzzle-info"><h4>Find the Mistake</h4><p>Wrong process in germination</p></div>
+            <span class="puzzle-badge new">New</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header"><span class="card-title">🏆 Leaderboard</span><span class="card-action">This Week</span></div>
+        <div>
+          <div class="leader-row">
+            <span class="leader-rank top1">1</span>
+            <div class="leader-avatar" style="background:linear-gradient(135deg,var(--gold),#E8A030)">RS</div>
+            <span class="leader-name">Rekha Sharma</span>
+            <span class="leader-streak">🔥 21</span>
+            <span class="leader-pts">1,240 pts</span>
+          </div>
+          <div class="leader-row">
+            <span class="leader-rank top2">2</span>
+            <div class="leader-avatar" style="background:linear-gradient(135deg,var(--sky),#3A6D98)">AM</div>
+            <span class="leader-name">Anita More</span>
+            <span class="leader-streak">🔥 18</span>
+            <span class="leader-pts">1,180 pts</span>
+          </div>
+          <div class="leader-row" style="background:rgba(200,75,47,0.06); border-radius:10px">
+            <span class="leader-rank top3">3</span>
+            <div class="leader-avatar" style="background:linear-gradient(135deg,var(--terracotta),#8B2A12)">PS</div>
+            <span class="leader-name">Priya Sharma <span style="font-size:11px;color:var(--terracotta)">(You)</span></span>
+            <span class="leader-streak">🔥 12</span>
+            <span class="leader-pts">1,050 pts</span>
+          </div>
+          <div class="leader-row">
+            <span class="leader-rank" style="color:var(--ink-mid)">4</span>
+            <div class="leader-avatar" style="background:linear-gradient(135deg,var(--sage),#4A7A52)">NK</div>
+            <span class="leader-name">Neha Kulkarni</span>
+            <span class="leader-streak">🔥 9</span>
+            <span class="leader-pts">980 pts</span>
+          </div>
+          <div class="leader-row">
+            <span class="leader-rank" style="color:var(--ink-mid)">5</span>
+            <div class="leader-avatar" style="background:linear-gradient(135deg,#8B7BB0,#5A4A80)">VP</div>
+            <span class="leader-name">Vandana Pawar</span>
+            <span class="leader-streak">🔥 7</span>
+            <span class="leader-pts">870 pts</span>
+          </div>
+        </div>
+
+        <div style="margin-top:20px; padding-top:16px; border-top:1px solid var(--cream-dark)">
+          <div class="card-title" style="margin-bottom:12px">🌟 Auto Highlights</div>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(212,168,75,0.08);border-radius:10px;border:1px solid rgba(212,168,75,0.2)">
+              <span>🏅</span><span style="font-size:13px"><strong>Top Performer of the Day</strong> — Rekha Sharma</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(122,158,126,0.08);border-radius:10px;border:1px solid rgba(122,158,126,0.2)">
+              <span>🤝</span><span style="font-size:13px"><strong>Best Team Player</strong> — Anita More</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;padding:10px;background:rgba(91,141,184,0.08);border-radius:10px;border:1px solid rgba(91,141,184,0.2)">
+              <span>📚</span><span style="font-size:13px"><strong>Most Consistent Learner</strong> — Priya Sharma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div style="background:var(--card-bg);border:1px solid var(--cream-dark);border-radius:18px;padding:28px;margin-top:24px;">
+      <h3 style="font-family:'Syne',sans-serif;font-size:17px;font-weight:800;text-align:center;margin-bottom:6px;color:var(--ink);">💬 What Teachers Say</h3>
+      <p style="text-align:center;font-size:13px;color:var(--ink-mid);margin-bottom:22px;">Real experiences from Kaushal Saathi teachers across India</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <div style="background:var(--cream);border:1px solid var(--cream-dark);border-radius:14px;padding:20px;position:relative;">
+          <div style="font-size:32px;color:var(--terracotta);opacity:0.2;position:absolute;top:14px;right:16px;font-family:Georgia,serif;line-height:1;">"</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--terracotta),var(--gold));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;">SD</div>
+            <div><div style="font-size:13px;font-weight:700;color:var(--ink);">Smit Doshi</div><div style="font-size:11px;color:var(--ink-mid);">Senior Teacher, Lonihan Enterprises</div></div>
+          </div>
+          <div style="color:#f59e0b;font-size:13px;margin-bottom:10px;">★★★★★</div>
+          <p style="font-size:12.5px;color:var(--ink-mid);line-height:1.75;font-style:italic;">"The lack of coordination between tools was causing real disruption in my teaching. Kaushal Saathi gave me one unified platform. My classes are now organised, my students are progressing, and my teaching quality has improved dramatically."</p>
+        </div>
+        <div style="background:var(--cream);border:1px solid var(--cream-dark);border-radius:14px;padding:20px;position:relative;">
+          <div style="font-size:32px;color:var(--sky);opacity:0.2;position:absolute;top:14px;right:16px;font-family:Georgia,serif;line-height:1;">"</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#8b5cf6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;">RB</div>
+            <div><div style="font-size:13px;font-weight:700;color:var(--ink);">Rinal B. Bora, MD</div><div style="font-size:11px;color:var(--ink-mid);">Professor, University of California, Irvine</div></div>
+          </div>
+          <div style="color:#f59e0b;font-size:13px;margin-bottom:10px;">★★★★★</div>
+          <p style="font-size:12.5px;color:var(--ink-mid);line-height:1.75;font-style:italic;">"Having worked in education for 24 years and tried many platforms, Kaushal Saathi's AI tools stand out. They give my students accurate, contextual information in a way that is genuinely useful for the Indian classroom."</p>
+        </div>
+        <div style="background:var(--cream);border:1px solid var(--cream-dark);border-radius:14px;padding:20px;position:relative;">
+          <div style="font-size:32px;color:var(--sage);opacity:0.2;position:absolute;top:14px;right:16px;font-family:Georgia,serif;line-height:1;">"</div>
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#ef4444);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;">MW</div>
+            <div><div style="font-size:13px;font-weight:700;color:var(--ink);">Mahesh Wadhor</div><div style="font-size:11px;color:var(--ink-mid);">Art Therapist & Teacher, Pune</div></div>
+          </div>
+          <div style="color:#f59e0b;font-size:13px;margin-bottom:10px;">★★★★★</div>
+          <p style="font-size:12.5px;color:var(--ink-mid);line-height:1.75;font-style:italic;">"After discovering these resources, both my students and I experienced a real transformation in how we approach learning. My classes are now far more engaging and impactful than they ever were before."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── STORIES ── -->
+  <div class="content" id="page-stories">
+    <div class="page-header">
+      <h2>⭐ Share Your Success Story</h2>
+      <p>Inspire others · Celebrate achievements · Build community</p>
+    </div>
+
+    <!-- Testimonials from supporters -->
+    <div style="background:var(--card-bg);border:1px solid var(--cream-dark);border-radius:18px;padding:28px;margin-bottom:24px;">
+      <h3 style="font-family:'Syne',sans-serif;font-size:17px;font-weight:800;margin-bottom:6px;color:var(--ink);">💬 What Our Teachers Say</h3>
+      <p style="font-size:13px;color:var(--ink-mid);margin-bottom:20px;">Voices from the Kaushal Saathi community</p>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+        <div style="background:var(--cream);border:1px solid var(--cream-dark);border-radius:14px;padding:20px;position:relative;">
+          <div style="font-size:32px;color:var(--terracotta);opacity:0.15;position:absolute;top:14px;right:16px;font-family:Georgia,serif;line-height:1;">"</div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--terracotta),var(--gold));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;">SD</div>
+            <div style="color:#f59e0b;font-size:15px;">★★★★★</div>
+          </div>
+          <p style="font-size:12.5px;color:var(--ink-mid);line-height:1.7;margin-bottom:14px;font-style:italic;">"The lack of coordination between tools was causing real disruption in my teaching. Kaushal Saathi gave me one unified platform. My classes are now organised, my students are progressing, and my teaching quality has improved dramatically."</p>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,var(--terracotta),var(--gold));display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;">SD</div>
+            <div><div style="font-size:12.5px;font-weight:600;color:var(--ink);">Smit Doshi</div><div style="font-size:11px;color:var(--ink-mid);">Senior Teacher, Lonihan Enterprises</div></div>
+          </div>
+        </div>
+        <div style="background:var(--cream);border:1px solid var(--cream-dark);border-radius:14px;padding:20px;position:relative;">
+          <div style="font-size:32px;color:var(--sky);opacity:0.15;position:absolute;top:14px;right:16px;font-family:Georgia,serif;line-height:1;">"</div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#8b5cf6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;">RB</div>
+            <div style="color:#f59e0b;font-size:15px;">★★★★★</div>
+          </div>
+          <p style="font-size:12.5px;color:var(--ink-mid);line-height:1.7;margin-bottom:14px;font-style:italic;">"Having worked in education for 24 years and tried many platforms, Kaushal Saathi's AI tools stand out. They give my students accurate, contextual information — genuinely useful for the Indian classroom."</p>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#8b5cf6);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;">RB</div>
+            <div><div style="font-size:12.5px;font-weight:600;color:var(--ink);">Rinal B. Bora, MD</div><div style="font-size:11px;color:var(--ink-mid);">Professor, University of California, Irvine</div></div>
+          </div>
+        </div>
+        <div style="background:var(--cream);border:1px solid var(--cream-dark);border-radius:14px;padding:20px;position:relative;">
+          <div style="font-size:32px;color:var(--sage);opacity:0.15;position:absolute;top:14px;right:16px;font-family:Georgia,serif;line-height:1;">"</div>
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+            <div style="width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#ef4444);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;">MW</div>
+            <div style="color:#f59e0b;font-size:15px;">★★★★★</div>
+          </div>
+          <p style="font-size:12.5px;color:var(--ink-mid);line-height:1.7;margin-bottom:14px;font-style:italic;">"After discovering these resources, both my students and I experienced a real transformation in how we approach learning. My classes are now far more engaging and impactful than ever before."</p>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#f59e0b,#ef4444);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;">MW</div>
+            <div><div style="font-size:12.5px;font-weight:600;color:var(--ink);">Mahesh Wadhor</div><div style="font-size:11px;color:var(--ink-mid);">Art Therapist & Teacher, Pune</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px">
+      <div class="story-card" style="cursor:pointer">
+        <div class="story-badge">⭐ Featured · April 2026</div>
+        <h4>"Kitchen Garden Transforms School Waste Culture"</h4>
+        <p>Grade 6 students at Navjeevan School successfully completed all 10 kitchen garden activities, converting 80 kg of waste to compost.</p>
+        <div class="story-meta">
+          <div class="story-avatar">SP</div>
+          <div>
+            <div class="story-meta-text">Sunita Patil · Navjeevan School, Nashik</div>
+            <div style="color:rgba(255,255,255,0.5);font-size:11px;margin-top:3px">❤️ 47 likes · 12 comments</div>
+          </div>
+        </div>
+      </div>
+      <div class="story-card" style="background:linear-gradient(135deg,#1A2A3A,#0F1A2A);cursor:pointer">
+        <div class="story-badge" style="color:#9ECDE8;background:rgba(91,141,184,0.2);border-color:rgba(91,141,184,0.3)">📍 Pune District</div>
+        <h4>"Biodiversity Walk — 43 Species Identified!"</h4>
+        <p>Students documented insects, plants, and birds around their school using the Biodiversity Register framework.</p>
+        <div class="story-meta">
+          <div class="story-avatar" style="background:linear-gradient(135deg,var(--sky),#3A6D98)">AM</div>
+          <div>
+            <div class="story-meta-text">Anita More · ZP School, Pune</div>
+            <div style="color:rgba(255,255,255,0.5);font-size:11px;margin-top:3px">❤️ 31 likes · 8 comments</div>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="border:2px dashed var(--cream-dark);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;min-height:200px">
+        <div style="font-size:40px;margin-bottom:12px">✍️</div>
+        <h3 style="font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:6px">Share Your Story</h3>
+        <p style="font-size:13px;color:var(--ink-mid);margin-bottom:16px">Use our story templates to share your classroom success</p>
+        <button class="topbar-btn btn-primary">+ Write Story</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── REPORTS ── -->
+  <div class="content" id="page-reports">
+    <div class="page-header">
+      <h2>📊 Generate Your Report</h2>
+      <p>AI-powered project and assessment reports with export options</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
+      <div class="card">
+        <div class="card-header"><span class="card-title">📋 Project Report</span></div>
+        <p style="font-size:13px;color:var(--ink-mid);margin-bottom:16px">Summarizes activities, progress, outcomes, and key learnings for a selected project.</p>
+        <div class="form-group" style="margin-bottom:12px">
+          <label class="form-label">Select Project</label>
+          <select class="form-select"><option>School Kitchen Garden (60% complete)</option><option>Biodiversity Register (100%)</option></select>
+        </div>
+        <button class="generate-btn" style="margin-top:4px" onclick="alert('Generating Project Report…')">📊 Generate Project Report</button>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-title">📝 Assessment Report</span></div>
+        <p style="font-size:13px;color:var(--ink-mid);margin-bottom:16px">Analyzes student performance through scores, feedback, and skill assessment insights.</p>
+        <div class="form-group" style="margin-bottom:12px">
+          <label class="form-label">Assessment Type</label>
+          <select class="form-select"><option>Writing Assessment</option><option>Oral Assessment</option><option>Portfolio</option></select>
+        </div>
+        <button class="generate-btn" style="margin-top:4px" onclick="alert('Generating Assessment Report…')">📈 Generate Assessment Report</button>
+      </div>
+    </div>
+    <div style="margin-top:20px;display:flex;gap:16px">
+      <button class="topbar-btn btn-outline" style="padding:12px 24px;font-size:13.5px">📥 Export as PDF</button>
+      <button class="topbar-btn btn-outline" style="padding:12px 24px;font-size:13.5px">📊 Export as Excel</button>
+      <button class="topbar-btn btn-primary" style="padding:12px 24px;font-size:13.5px">📋 Use Pre-Design Template</button>
+    </div>
+  </div>
+
+  <!-- ── PROJECTS (full) ── -->
+  <div class="content" id="page-projects">
+    <div class="page-header"><h2>🌱 Projects</h2><p>Work with Life Forms · Machines · Human Service · Activity-wise progress tracking</p></div>
+
+    <!-- Legend -->
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:20px;flex-wrap:wrap">
+      <span style="font-size:12px;font-weight:600;color:var(--ink-mid)">Status Legend:</span>
+      <span style="display:flex;align-items:center;gap:6px;font-size:12px"><span style="width:12px;height:12px;border-radius:3px;background:#22C55E;display:inline-block"></span>Completed</span>
+      <span style="display:flex;align-items:center;gap:6px;font-size:12px"><span style="width:12px;height:12px;border-radius:3px;background:#EAB308;display:inline-block"></span>Ongoing</span>
+      <span style="display:flex;align-items:center;gap:6px;font-size:12px"><span style="width:12px;height:12px;border-radius:3px;background:#E5E7EB;border:1px solid #ccc;display:inline-block"></span>Not Started</span>
+      <span style="display:flex;align-items:center;gap:6px;font-size:12px"><span style="width:12px;height:12px;border-radius:3px;background:#EF4444;display:inline-block"></span>Behind (-5% to -10%)</span>
+    </div>
+
+    <!-- Project Cards -->
+    <div style="display:flex;flex-direction:column;gap:20px">
+
+      <!-- PROJECT 1: Kitchen Garden -->
+      <div class="proj-detail-card">
+        <div class="proj-detail-header" style="border-left:5px solid #EAB308">
+          <div style="display:flex;align-items:center;gap:14px">
+            <div style="font-size:40px">🌿</div>
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800">School Kitchen Garden</div>
+              <div style="font-size:12px;color:var(--ink-mid);margin-top:3px">Life Forms · Term 1 · Grade 6</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px">
+            <div style="text-align:center">
+              <div style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:#EAB308">60%</div>
+              <div style="font-size:11px;color:var(--ink-mid)">Overall Progress</div>
+            </div>
+            <span class="proj-status-badge ongoing">🟡 Ongoing</span>
+          </div>
+        </div>
+
+        <!-- Activity progress row -->
+        <div style="padding:20px;border-bottom:1px solid var(--cream-dark)">
+          <div style="font-size:12px;font-weight:700;color:var(--ink-mid);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px">Activities Completion</div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:12px">
+            <div class="act-chip done" title="Activity 1: Site Selection — 100%">A1 ✓</div>
+            <div class="act-chip done" title="Activity 2: Soil Prep — 100%">A2 ✓</div>
+            <div class="act-chip done" title="Activity 3: Vermicompost — 100%">A3 ✓</div>
+            <div class="act-chip done" title="Activity 4: Seed Sowing — 100%">A4 ✓</div>
+            <div class="act-chip done" title="Activity 5: Transplanting — 100%">A5 ✓</div>
+            <div class="act-chip ongoing" title="Activity 6: Composting — 65%">A6 65%</div>
+            <div class="act-chip pending" title="Activity 7: Height Tracking — 0%">A7</div>
+            <div class="act-chip pending" title="Activity 8: Harvest — 0%">A8</div>
+            <div class="act-chip pending" title="Activity 9: Cost Calc — 0%">A9</div>
+            <div class="act-chip pending" title="Activity 10: Final Report — 0%">A10</div>
+          </div>
+        </div>
+
+        <!-- Stats row -->
+        <div style="padding:16px 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+          <div class="proj-mini-stat"><div class="proj-mini-val" style="color:#22C55E">5</div><div class="proj-mini-label">Completed</div></div>
+          <div class="proj-mini-stat"><div class="proj-mini-val" style="color:#EAB308">1</div><div class="proj-mini-label">In Progress</div></div>
+          <div class="proj-mini-stat"><div class="proj-mini-val" style="color:#94A3B8">4</div><div class="proj-mini-label">Pending</div></div>
+          <div class="proj-mini-stat"><div class="proj-mini-val" style="color:var(--terracotta)">0</div><div class="proj-mini-label">Behind Schedule</div></div>
+        </div>
+      </div>
+
+      <!-- PROJECT 2: Biodiversity Register -->
+      <div class="proj-detail-card">
+        <div class="proj-detail-header" style="border-left:5px solid #22C55E">
+          <div style="display:flex;align-items:center;gap:14px">
+            <div style="font-size:40px">🦋</div>
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800">Biodiversity Register</div>
+              <div style="font-size:12px;color:var(--ink-mid);margin-top:3px">Life Forms · Term 2 · Grade 6</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px">
+            <div style="text-align:center">
+              <div style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:#22C55E">100%</div>
+              <div style="font-size:11px;color:var(--ink-mid)">Overall Progress</div>
+            </div>
+            <span class="proj-status-badge done">✅ Completed</span>
+          </div>
+        </div>
+        <div style="padding:20px;border-bottom:1px solid var(--cream-dark)">
+          <div style="font-size:12px;font-weight:700;color:var(--ink-mid);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px">Activities Completion</div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px">
+            <div class="act-chip done">A1 ✓</div>
+            <div class="act-chip done">A2 ✓</div>
+            <div class="act-chip done">A3 ✓</div>
+            <div class="act-chip done">A4 ✓</div>
+            <div class="act-chip done">A5 ✓</div>
+            <div class="act-chip done">A6 ✓</div>
+            <div class="act-chip done">A7 ✓</div>
+            <div class="act-chip done">A8 ✓</div>
+          </div>
+        </div>
+        <div style="padding:16px 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+          <div class="proj-mini-stat"><div class="proj-mini-val" style="color:#22C55E">8</div><div class="proj-mini-label">Completed</div></div>
+          <div class="proj-mini-stat"><div class="proj-mini-val" style="color:#EAB308">0</div><div class="proj-mini-label">In Progress</div></div>
+          <div class="proj-mini-stat"><div class="proj-mini-val" style="color:#94A3B8">0</div><div class="proj-mini-label">Pending</div></div>
+          <div class="proj-mini-stat"><div class="proj-mini-val" style="color:var(--terracotta)">0</div><div class="proj-mini-label">Behind Schedule</div></div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3: Maker Skills -->
+      <div class="proj-detail-card">
+        <div class="proj-detail-header" style="border-left:5px solid #EF4444">
+          <div style="display:flex;align-items:center;gap:14px">
+            <div style="font-size:40px">⚙️</div>
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800">Maker Skills</div>
+              <div style="font-size:12px;color:var(--ink-mid);margin-top:3px">Machines · Term 3 · Grade 6 · ⚠️ Behind Schedule</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px">
+            <div style="text-align:center">
+              <div style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:#EF4444">30%</div>
+              <div style="font-size:11px;color:var(--ink-mid)">Overall Progress</div>
+            </div>
+            <span class="proj-status-badge behind">🔴 Behind (-8%)</span>
+          </div>
+        </div>
+        <div style="padding:20px;border-bottom:1px solid var(--cream-dark)">
+          <div style="font-size:12px;font-weight:700;color:var(--ink-mid);text-transform:uppercase;letter-spacing:0.5px;margin-bottom:12px">Activities Completion</div>
+          <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px">
+            <div class="act-chip done">A1 ✓</div>
+            <div class="act-chip done">A2 ✓</div>
+            <div class="act-chip done">A3 ✓</div>
+            <div class="act-chip behind" title="Activity 4: 30% — Behind">A4 30%</div>
+            <div class="act-chip pending">A5</div>
+            <div class="act-chip pending">A6</div>
+            <div class="act-chip pending">A7</div>
+            <div class="act-chip pending">A8</div>
+            <div class="act-chip pending">A9</div>
+            <div class="act-chip pending">A10</div>
+          </div>
+        </div>
+        <div style="padding:16px 20px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+          <div class="proj-mini-stat"><div class="proj-mini-val" style="color:#22C55E">3</div><div class="proj-mini-label">Completed</div></div>
+          <div class="proj-mini-stat"><div class="proj-mini-val" style="color:#EAB308">0</div><div class="proj-mini-label">In Progress</div></div>
+          <div class="proj-mini-stat"><div class="proj-mini-val" style="color:#94A3B8">6</div><div class="proj-mini-label">Pending</div></div>
+          <div class="proj-mini-stat"><div class="proj-mini-val" style="color:var(--terracotta)">1</div><div class="proj-mini-label">Behind Schedule</div></div>
+        </div>
+      </div>
+
+      <!-- PROJECT 4: Cooking without Fire — Not Started -->
+      <div class="proj-detail-card" style="opacity:0.7">
+        <div class="proj-detail-header" style="border-left:5px solid #E5E7EB">
+          <div style="display:flex;align-items:center;gap:14px">
+            <div style="font-size:40px">🍳</div>
+            <div>
+              <div style="font-family:'Syne',sans-serif;font-size:18px;font-weight:800">Cooking without Fire</div>
+              <div style="font-size:12px;color:var(--ink-mid);margin-top:3px">Life Forms · Grade 7 · Upcoming</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:16px">
+            <div style="text-align:center">
+              <div style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:#94A3B8">0%</div>
+              <div style="font-size:11px;color:var(--ink-mid)">Not Started</div>
+            </div>
+            <span class="proj-status-badge notstarted">⬜ Not Started</span>
+          </div>
+        </div>
+        <div style="padding:16px 20px;text-align:center;color:var(--ink-mid);font-size:13px">Activities will appear once this project begins</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ── CONTENT REPO (full) ── -->
+  <div class="content" id="page-content">
+    <div class="page-header"><h2>📚 Content Repository</h2><p>Resources for teachers and students — Self Training · Teaching · Learning</p></div>
+
+    <!-- Tab Switcher -->
+    <div class="cr-tabs">
+      <button class="cr-tab active" onclick="switchCRTab('self-training', this)">👩‍🏫 Teachers · Self Training</button>
+      <button class="cr-tab" onclick="switchCRTab('for-teaching', this)">📖 Teachers · For Teaching</button>
+      <button class="cr-tab" onclick="switchCRTab('students', this)">🎒 Students · Self Learning</button>
+    </div>
+
+    <!-- ── SELF TRAINING TAB ── -->
+    <div class="cr-panel active" id="cr-self-training">
+      <div style="display:grid;grid-template-columns:280px 1fr;gap:20px">
+        <!-- Left: Learning Path -->
+        <div>
+          <div class="card" style="margin-bottom:16px">
+            <div class="card-header"><span class="card-title">🗺️ Your Learning Path</span></div>
+            <div class="lp-step done"><div class="lp-dot done">✓</div><div><div class="lp-label">Beginner</div><div class="lp-sub">Basics of Vocational Ed</div></div></div>
+            <div class="lp-step done"><div class="lp-dot done">✓</div><div><div class="lp-label">Foundational</div><div class="lp-sub">Project-Based Learning</div></div></div>
+            <div class="lp-step active"><div class="lp-dot active">▶</div><div><div class="lp-label">Intermediate</div><div class="lp-sub">Assessment & Rubrics</div></div></div>
+            <div class="lp-step"><div class="lp-dot">4</div><div><div class="lp-label">Advanced</div><div class="lp-sub">Integration & Leadership</div></div></div>
+            <div class="lp-step" style="border-bottom:none"><div class="lp-dot">5</div><div><div class="lp-label">Expert</div><div class="lp-sub">Curriculum Design</div></div></div>
+          </div>
+          <div class="card">
+            <div class="card-header"><span class="card-title">📊 Progress</span></div>
+            <div style="text-align:center;padding:8px 0">
+              <div style="font-family:'Syne',sans-serif;font-size:36px;font-weight:800;color:var(--terracotta)">3/5</div>
+              <div style="font-size:12px;color:var(--ink-mid)">Levels Completed</div>
+              <div class="progress-bar" style="margin-top:12px"><div class="progress-fill" style="width:60%"></div></div>
+              <div style="font-size:11px;color:var(--ink-mid);margin-top:6px">60% Complete</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Content -->
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <!-- Course Recommendations -->
+          <div class="card">
+            <div class="card-header">
+              <span class="card-title">🎓 Recommended Courses</span>
+              <span class="tag tag-orange">For You</span>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div class="cr-course-card">
+                <div class="cr-course-thumb" style="background:linear-gradient(135deg,#FF6B35,#FF9A3C)">📽️</div>
+                <div class="cr-course-info">
+                  <div class="cr-course-title">NEP 2020 & Vocational Education</div>
+                  <div class="cr-course-meta">NISHTHA · 4h 30m · Free</div>
+                  <div style="display:flex;align-items:center;gap:6px;margin-top:6px">
+                    <div class="progress-bar" style="flex:1"><div class="progress-fill" style="width:100%"></div></div>
+                    <span style="font-size:10px;font-weight:700;color:var(--sage)">Done</span>
+                  </div>
+                </div>
+              </div>
+              <div class="cr-course-card">
+                <div class="cr-course-thumb" style="background:linear-gradient(135deg,#5B8DB8,#3A6D98)">🌱</div>
+                <div class="cr-course-info">
+                  <div class="cr-course-title">Project-Based Learning in Schools</div>
+                  <div class="cr-course-meta">Diksha · 3h · Free</div>
+                  <div style="display:flex;align-items:center;gap:6px;margin-top:6px">
+                    <div class="progress-bar" style="flex:1"><div class="progress-fill" style="width:100%"></div></div>
+                    <span style="font-size:10px;font-weight:700;color:var(--sage)">Done</span>
+                  </div>
+                </div>
+              </div>
+              <div class="cr-course-card" style="border-color:var(--terracotta)">
+                <div class="cr-course-thumb" style="background:linear-gradient(135deg,var(--terracotta),#8B2A12)">📝</div>
+                <div class="cr-course-info">
+                  <div class="cr-course-title">Holistic Assessment Techniques</div>
+                  <div class="cr-course-meta">SCERT · 5h · ← Current</div>
+                  <div style="display:flex;align-items:center;gap:6px;margin-top:6px">
+                    <div class="progress-bar" style="flex:1"><div class="progress-fill" style="width:45%"></div></div>
+                    <span style="font-size:10px;font-weight:700;color:var(--terracotta)">45%</span>
+                  </div>
+                </div>
+              </div>
+              <div class="cr-course-card">
+                <div class="cr-course-thumb" style="background:linear-gradient(135deg,#7A9E7E,#4A7A52)">🔗</div>
+                <div class="cr-course-info">
+                  <div class="cr-course-title">Subject Integration Methods</div>
+                  <div class="cr-course-meta">YouTube · 2h · Free</div>
+                  <div style="display:flex;align-items:center;gap:6px;margin-top:6px">
+                    <div class="progress-bar" style="flex:1"><div class="progress-fill" style="width:0%"></div></div>
+                    <span style="font-size:10px;font-weight:600;color:var(--ink-mid)">Start</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Topic-wise Playlists -->
+          <div class="card">
+            <div class="card-header"><span class="card-title">🎬 Topic-wise YouTube Playlists</span><span class="tag tag-blue">Concept Learning</span></div>
+            <div style="display:flex;flex-direction:column;gap:10px">
+              <div class="cr-video-row">
+                <div class="cr-yt-thumb">▶</div>
+                <div style="flex:1">
+                  <div style="font-size:13px;font-weight:600">Understanding Germination — Class 6 Science</div>
+                  <div style="font-size:11.5px;color:var(--ink-mid);margin-top:2px">Khan Academy India · 18 min · Hindi & English</div>
+                </div>
+                <button class="cr-watch-btn" onclick="alert('Opening video…')">Watch</button>
+              </div>
+              <div class="cr-video-row">
+                <div class="cr-yt-thumb" style="background:#C84B2F">▶</div>
+                <div style="flex:1">
+                  <div style="font-size:13px;font-weight:600">Vermicomposting Explained Simply</div>
+                  <div style="font-size:11.5px;color:var(--ink-mid);margin-top:2px">NCERT Official · 12 min · Hindi</div>
+                </div>
+                <button class="cr-watch-btn" onclick="alert('Opening video…')">Watch</button>
+              </div>
+              <div class="cr-video-row">
+                <div class="cr-yt-thumb" style="background:#5B8DB8">▶</div>
+                <div style="flex:1">
+                  <div style="font-size:13px;font-weight:600">Mensuration: Area & Perimeter Concepts</div>
+                  <div style="font-size:11.5px;color:var(--ink-mid);margin-top:2px">Maths by Anita · 24 min · Marathi</div>
+                </div>
+                <button class="cr-watch-btn" onclick="alert('Opening video…')">Watch</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── FOR TEACHING TAB ── -->
+    <div class="cr-panel" id="cr-for-teaching">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px">
+        <div class="card" style="cursor:pointer" onclick="alert('Opening teaching video playlist…')">
+          <div style="font-size:32px;margin-bottom:10px">🎬</div>
+          <div style="font-size:14px;font-weight:700;font-family:'Syne',sans-serif;margin-bottom:4px">Teaching Videos</div>
+          <div style="font-size:12px;color:var(--ink-mid)">Classroom-ready, syllabus-aligned video links</div>
+          <div style="margin-top:12px;display:flex;gap:6px"><span class="tag tag-green">18 Videos</span><span class="tag tag-blue">Grade 6</span></div>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="alert('Opening worksheets…')">
+          <div style="font-size:32px;margin-bottom:10px">📄</div>
+          <div style="font-size:14px;font-weight:700;font-family:'Syne',sans-serif;margin-bottom:4px">Worksheets & PDFs</div>
+          <div style="font-size:12px;color:var(--ink-mid)">Printable activity sheets & reference PDFs</div>
+          <div style="margin-top:12px;display:flex;gap:6px"><span class="tag tag-orange">34 Files</span><span class="tag tag-green">Download Ready</span></div>
+        </div>
+        <div class="card" style="cursor:pointer" onclick="alert('Opening PPT library…')">
+          <div style="font-size:32px;margin-bottom:10px">📊</div>
+          <div style="font-size:14px;font-weight:700;font-family:'Syne',sans-serif;margin-bottom:4px">PPT Presentations</div>
+          <div style="font-size:12px;color:var(--ink-mid)">Ready-to-use classroom slide decks</div>
+          <div style="margin-top:12px;display:flex;gap:6px"><span class="tag tag-blue">12 Decks</span><span class="tag tag-orange">Editable</span></div>
+        </div>
+      </div>
+
+      <!-- Resource table -->
+      <div class="card">
+        <div class="card-header"><span class="card-title">📚 All Teaching Resources · Kitchen Garden Project</span>
+          <div style="display:flex;gap:8px">
+            <button class="topbar-btn btn-outline" style="font-size:11px;padding:5px 10px">Filter ▾</button>
+          </div>
+        </div>
+        <table class="plan-table">
+          <thead><tr><th>Resource</th><th>Type</th><th>Aligned To</th><th>Language</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>🎬 Composting — How It Works</td><td><span class="tag tag-blue">Video</span></td><td>Activity 6 · Kitchen Garden</td><td>Hindi / Eng</td><td><button class="cr-watch-btn" onclick="alert('Open video')">Open</button></td></tr>
+            <tr><td>📄 Seed Germination Worksheet</td><td><span class="tag tag-green">PDF</span></td><td>Activity 4 · Syllabus Ch.3</td><td>English</td><td><button class="cr-watch-btn" onclick="alert('Downloading…')">Download</button></td></tr>
+            <tr><td>📊 Kitchen Garden PPT Deck</td><td><span class="tag tag-orange">PPT</span></td><td>Full Project Overview</td><td>Hindi</td><td><button class="cr-watch-btn" onclick="alert('Downloading…')">Download</button></td></tr>
+            <tr><td>🎬 Earthworm Observation Demo</td><td><span class="tag tag-blue">Video</span></td><td>Activity 3 · Science Ch.4</td><td>Marathi</td><td><button class="cr-watch-btn" onclick="alert('Open video')">Open</button></td></tr>
+            <tr><td>📄 Area & Perimeter Activity Sheet</td><td><span class="tag tag-green">PDF</span></td><td>Maths Integration</td><td>English</td><td><button class="cr-watch-btn" onclick="alert('Downloading…')">Download</button></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ── STUDENTS TAB ── -->
+    <div class="cr-panel" id="cr-students">
+      <div style="background:linear-gradient(135deg,var(--terracotta) 0%,#8B2A12 100%);border-radius:16px;padding:24px;color:#fff;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between">
+        <div>
+          <div style="font-size:12px;font-weight:600;opacity:0.7;text-transform:uppercase;letter-spacing:1px">Student Learning Hub</div>
+          <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-top:6px">Resources shared by Priya Sharma</div>
+          <div style="font-size:13px;opacity:0.8;margin-top:4px">Grade 6 · Kitchen Garden Project · Term 3</div>
+        </div>
+        <div style="font-size:60px;opacity:0.3">🎒</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+        <!-- Videos -->
+        <div class="card">
+          <div class="card-header"><span class="card-title">▶ Teacher-Shared Videos</span><span class="tag tag-blue">6 Videos</span></div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div class="cr-video-row">
+              <div class="cr-yt-thumb" style="background:#FF0000">▶</div>
+              <div style="flex:1"><div style="font-size:12.5px;font-weight:600">What is a Kitchen Garden?</div><div style="font-size:11px;color:var(--ink-mid)">5 min · For beginners</div></div>
+              <button class="cr-watch-btn">Watch</button>
+            </div>
+            <div class="cr-video-row">
+              <div class="cr-yt-thumb" style="background:#FF0000">▶</div>
+              <div style="flex:1"><div style="font-size:12.5px;font-weight:600">How Seeds Germinate — Animation</div><div style="font-size:11px;color:var(--ink-mid)">8 min · Science concept</div></div>
+              <button class="cr-watch-btn">Watch</button>
+            </div>
+            <div class="cr-video-row">
+              <div class="cr-yt-thumb" style="background:#FF0000">▶</div>
+              <div style="flex:1"><div style="font-size:12.5px;font-weight:600">Making a Bottle Helicopter</div><div style="font-size:11px;color:var(--ink-mid)">12 min · Practical activity</div></div>
+              <button class="cr-watch-btn">Watch</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PDFs & Worksheets -->
+        <div class="card">
+          <div class="card-header"><span class="card-title">📄 PDFs & Worksheets</span><span class="tag tag-green">8 Files</span></div>
+          <div style="display:flex;flex-direction:column;gap:10px">
+            <div class="cr-video-row">
+              <div style="width:36px;height:36px;border-radius:8px;background:rgba(200,75,47,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">📄</div>
+              <div style="flex:1"><div style="font-size:12.5px;font-weight:600">Germination Observation Sheet</div><div style="font-size:11px;color:var(--ink-mid)">PDF · 2 pages</div></div>
+              <button class="cr-watch-btn">Get</button>
+            </div>
+            <div class="cr-video-row">
+              <div style="width:36px;height:36px;border-radius:8px;background:rgba(91,141,184,0.1);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">📄</div>
+              <div style="flex:1"><div style="font-size:12.5px;font-weight:600">Kitchen Garden Activity Booklet</div><div style="font-size:11px;color:var(--ink-mid)">PDF · 10 pages</div></div>
+              <button class="cr-watch-btn">Get</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Small Practicals -->
+        <div class="card" style="grid-column:span 2">
+          <div class="card-header"><span class="card-title">🔬 Small Practicals & DIY Activities</span></div>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px">
+            <div style="border:1.5px solid var(--cream-dark);border-radius:12px;padding:14px;text-align:center;cursor:pointer" onclick="alert('Opening: Bottle Helicopter')">
+              <div style="font-size:32px;margin-bottom:8px">🚁</div>
+              <div style="font-size:12px;font-weight:700">Bottle Helicopter</div>
+              <div style="font-size:11px;color:var(--ink-mid);margin-top:3px">Air pressure concept</div>
+              <div class="tag tag-blue" style="display:inline-block;margin-top:8px">Easy</div>
+            </div>
+            <div style="border:1.5px solid var(--cream-dark);border-radius:12px;padding:14px;text-align:center;cursor:pointer" onclick="alert('Opening: Seed Germination Jar')">
+              <div style="font-size:32px;margin-bottom:8px">🌱</div>
+              <div style="font-size:12px;font-weight:700">Germination Jar</div>
+              <div style="font-size:11px;color:var(--ink-mid);margin-top:3px">Observe seed growth</div>
+              <div class="tag tag-green" style="display:inline-block;margin-top:8px">Easy</div>
+            </div>
+            <div style="border:1.5px solid var(--cream-dark);border-radius:12px;padding:14px;text-align:center;cursor:pointer" onclick="alert('Opening: Mini Compost Bin')">
+              <div style="font-size:32px;margin-bottom:8px">🗑️</div>
+              <div style="font-size:12px;font-weight:700">Mini Compost Bin</div>
+              <div style="font-size:11px;color:var(--ink-mid);margin-top:3px">Waste to compost</div>
+              <div class="tag tag-orange" style="display:inline-block;margin-top:8px">Medium</div>
+            </div>
+            <div style="border:1.5px solid var(--cream-dark);border-radius:12px;padding:14px;text-align:center;cursor:pointer" onclick="alert('Opening: Solar Water Heater')">
+              <div style="font-size:32px;margin-bottom:8px">☀️</div>
+              <div style="font-size:12px;font-weight:700">Solar Heater</div>
+              <div style="font-size:11px;color:var(--ink-mid);margin-top:3px">Heat energy concept</div>
+              <div class="tag tag-orange" style="display:inline-block;margin-top:8px">Medium</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SUBJECT INTEGRATION (full) ── -->
+  <div class="content" id="page-subjects">
+    <div class="page-header"><h2>🔗 Subject Integration</h2><p>How vocational sessions align with academic subjects — real classroom connections</p></div>
+
+    <!-- Session Selector -->
+    <div class="card" style="margin-bottom:20px">
+      <div class="card-header"><span class="card-title">🎯 Select Active Session</span></div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:10px">
+        <div class="si-session-btn active" onclick="selectSISession(this,'math')">➕ Maths Session</div>
+        <div class="si-session-btn" onclick="selectSISession(this,'science')">🔬 Science Session</div>
+        <div class="si-session-btn" onclick="selectSISession(this,'language')">📝 Language Session</div>
+        <div class="si-session-btn" onclick="selectSISession(this,'social')">🌍 Social Science</div>
+      </div>
+    </div>
+
+    <!-- Maths Session (default visible) -->
+    <div class="si-content active" id="si-math">
+      <div style="background:linear-gradient(135deg,#1a2a4a,#0d1b2e);border-radius:16px;padding:24px;color:#fff;margin-bottom:20px;display:flex;align-items:center;gap:20px">
+        <div style="width:64px;height:64px;border-radius:16px;background:rgba(91,141,184,0.25);display:flex;align-items:center;justify-content:center;font-size:36px;flex-shrink:0">➕</div>
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;opacity:0.6;text-transform:uppercase">Active Maths Session</div>
+          <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-top:4px">Kitchen Garden × Maths</div>
+          <div style="font-size:13px;opacity:0.75;margin-top:4px">Students use garden activities to learn Mensuration, Data Handling & Number Systems</div>
+        </div>
+        <div style="margin-left:auto;display:flex;flex-direction:column;gap:8px;text-align:center">
+          <div style="font-family:'Syne',sans-serif;font-size:28px;font-weight:800;color:#7BAFD4">4</div>
+          <div style="font-size:11px;opacity:0.6">Chapters Covered</div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:2fr 1fr;gap:16px">
+        <div class="card">
+          <div class="card-header"><span class="card-title">📐 How to Align This Session</span></div>
+          <table class="plan-table">
+            <thead><tr><th>Maths Chapter</th><th>Vocational Activity</th><th>What Students Do</th><th>Learning</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><span class="tag tag-blue">Mensuration</span><br><span style="font-size:11px">Area & Perimeter</span></td>
+                <td>Activity 1: Site Selection</td>
+                <td>Measure garden plot with tape, calculate area of each bed</td>
+                <td>Apply formulas in real context</td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-blue">Data Handling</span><br><span style="font-size:11px">Bar & Line Graphs</span></td>
+                <td>Activity 7: Plant Height Tracking</td>
+                <td>Record weekly height, plot growth on graph paper</td>
+                <td>Create & interpret graphs</td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-blue">Ratio & Proportion</span><br><span style="font-size:11px">Fractions</span></td>
+                <td>Activity 2: Soil Preparation</td>
+                <td>Mix soil : compost : sand in ratio 3:1:1, measure each</td>
+                <td>Real-life ratio use</td>
+              </tr>
+              <tr>
+                <td><span class="tag tag-blue">Number System</span><br><span style="font-size:11px">Large Numbers</span></td>
+                <td>Activity 9: Cost Calculation</td>
+                <td>Calculate cost per plant, total garden cost, savings vs buying</td>
+                <td>Practical arithmetic</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <div class="card">
+            <div class="card-header"><span class="card-title">✅ Session Checklist</span></div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <label class="si-check"><input type="checkbox" checked> <span>Discuss garden area (Mensuration)</span></label>
+              <label class="si-check"><input type="checkbox" checked> <span>Assign measurement activity</span></label>
+              <label class="si-check"><input type="checkbox"> <span>Plant height data recording</span></label>
+              <label class="si-check"><input type="checkbox"> <span>Graph plotting worksheet</span></label>
+              <label class="si-check"><input type="checkbox"> <span>Cost calculation exercise</span></label>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header"><span class="card-title">📄 Resources</span></div>
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <button class="cr-watch-btn" style="width:100%;text-align:left;justify-content:flex-start" onclick="alert('Downloading…')">📄 Maths Integration Worksheet</button>
+              <button class="cr-watch-btn" style="width:100%;text-align:left;justify-content:flex-start" onclick="alert('Opening…')">🎬 Mensuration Garden Video</button>
+              <button class="cr-watch-btn" style="width:100%;text-align:left;justify-content:flex-start" onclick="alert('Opening…')">📊 Graph Paper Template</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Science Session -->
+    <div class="si-content" id="si-science">
+      <div style="background:linear-gradient(135deg,#1a3a2a,#0d2018);border-radius:16px;padding:24px;color:#fff;margin-bottom:20px;display:flex;align-items:center;gap:20px">
+        <div style="width:64px;height:64px;border-radius:16px;background:rgba(122,158,126,0.25);display:flex;align-items:center;justify-content:center;font-size:36px;flex-shrink:0">🔬</div>
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;opacity:0.6;text-transform:uppercase">Active Science Session</div>
+          <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-top:4px">Kitchen Garden × Science</div>
+          <div style="font-size:13px;opacity:0.75;margin-top:4px">Students explore germination, soil nutrition, decomposition and biodiversity</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header"><span class="card-title">🌱 Science Chapter Alignment</span></div>
+        <table class="plan-table">
+          <thead><tr><th>Science Chapter</th><th>Vocational Activity</th><th>What Students Do</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag tag-green">The Living World</span><br>Germination</td><td>Activity 4: Seed Sowing</td><td>Observe seed germination stages, root & shoot development over 7 days</td></tr>
+            <tr><td><span class="tag tag-green">Nutrients in Plants</span></td><td>Activity 3: Vermicomposting</td><td>Prepare compost, observe earthworms, study nutrient cycle</td></tr>
+            <tr><td><span class="tag tag-green">Decomposition</span></td><td>Activity 6: Composting</td><td>Monitor compost pile temperature, identify decomposers</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Language Session -->
+    <div class="si-content" id="si-language">
+      <div style="background:linear-gradient(135deg,#3a1a2a,#2a0d1a);border-radius:16px;padding:24px;color:#fff;margin-bottom:20px;display:flex;align-items:center;gap:20px">
+        <div style="width:64px;height:64px;border-radius:16px;background:rgba(200,75,47,0.25);display:flex;align-items:center;justify-content:center;font-size:36px;flex-shrink:0">📝</div>
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;opacity:0.6;text-transform:uppercase">Active Language Session</div>
+          <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-top:4px">Kitchen Garden × Language</div>
+          <div style="font-size:13px;opacity:0.75;margin-top:4px">Students write observation journals, reports, poems and vocabulary cards</div>
+        </div>
+      </div>
+      <div class="card">
+        <table class="plan-table">
+          <thead><tr><th>Language Skill</th><th>Activity</th><th>Task</th></tr></thead>
+          <tbody>
+            <tr><td>Writing — Descriptive</td><td>Activity 4</td><td>Write a 5-sentence observation journal about seed germination daily</td></tr>
+            <tr><td>Vocabulary Building</td><td>All Activities</td><td>Create word cards: germinate, decompose, compost, nutrient, photosynthesis</td></tr>
+            <tr><td>Report Writing</td><td>Final Report</td><td>Write a structured report on the garden project with introduction, findings, conclusion</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Social Science Session -->
+    <div class="si-content" id="si-social">
+      <div style="background:linear-gradient(135deg,#2a2a1a,#1a1a0d);border-radius:16px;padding:24px;color:#fff;margin-bottom:20px;display:flex;align-items:center;gap:20px">
+        <div style="width:64px;height:64px;border-radius:16px;background:rgba(212,168,75,0.25);display:flex;align-items:center;justify-content:center;font-size:36px;flex-shrink:0">🌍</div>
+        <div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;opacity:0.6;text-transform:uppercase">Active Social Science Session</div>
+          <div style="font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-top:4px">Kitchen Garden × Social Science</div>
+          <div style="font-size:13px;opacity:0.75;margin-top:4px">Students connect farming, food, community and economics to garden work</div>
+        </div>
+      </div>
+      <div class="card">
+        <table class="plan-table">
+          <thead><tr><th>Social Science Topic</th><th>Activity</th><th>Connection</th></tr></thead>
+          <tbody>
+            <tr><td>Agriculture in India</td><td>Activity 1–4</td><td>Understand how farmers work; compare school garden to village farms</td></tr>
+            <tr><td>Our Environment</td><td>Activity 6</td><td>Study how waste management and composting helps the environment</td></tr>
+            <tr><td>Local Governance</td><td>Activity 9</td><td>How village panchayat supports community farming projects</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── FIELD VISITS ── -->
+  <div class="content" id="page-fieldvisits">
+    <div class="page-header"><h2>🗺️ Field Visits & Guest Lectures</h2><p>Plan immersive experiences — track status, schedule experts, map nearby locations</p></div>
+
+    <!-- ── TABS ── -->
+    <div style="display:flex;gap:10px;margin-bottom:24px">
+      <button class="fv-tab active" id="fvt-visits" onclick="switchFVTab('visits',this)">🌿 Field Visits</button>
+      <button class="fv-tab" id="fvt-guests" onclick="switchFVTab('guests',this)">🎤 Guest Lectures</button>
+      <button class="fv-tab" id="fvt-planner" onclick="switchFVTab('planner',this)">📋 Event Planner</button>
+    </div>
+
+    <!-- ── FIELD VISITS PANEL ── -->
+    <div class="fv-panel active" id="fv-visits">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-bottom:20px">
+        <!-- Card 1 -->
+        <div class="fv-location-card" style="border-top:4px solid var(--sage)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+            <div style="width:52px;height:52px;border-radius:14px;background:rgba(122,158,126,0.15);display:flex;align-items:center;justify-content:center;font-size:28px">🌱</div>
+            <span class="fv-status confirmed">✅ Confirmed</span>
+          </div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:15px;font-weight:800;margin-bottom:4px">Saswad Nursery</h3>
+          <div style="font-size:12px;color:var(--ink-mid);margin-bottom:10px">🏫 Saswad, Pune · 12 km · 25 min by bus</div>
+          <div style="font-size:12.5px;color:var(--ink-mid);margin-bottom:14px;line-height:1.5">Students explore plant varieties, grafting, and nursery management. Ideal for Kitchen Garden & Biodiversity.</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
+            <span class="tag tag-green">Kitchen Garden</span>
+            <span class="tag tag-green">Biodiversity</span>
+            <span class="tag tag-blue">Grade 6</span>
+          </div>
+          <div style="background:var(--cream);border-radius:10px;padding:10px;font-size:12px;color:var(--ink-mid);margin-bottom:12px">
+            📅 <strong>Scheduled:</strong> Friday, Apr 4 · 9:00 AM<br>
+            🚌 <strong>Transport:</strong> School bus · 35 students<br>
+            👩‍🏫 <strong>Guide:</strong> Mr. Ramesh Kulkarni (Nursery Manager)
+          </div>
+          <div style="display:flex;gap:8px">
+            <button class="topbar-btn btn-outline" style="flex:1;font-size:12px;padding:8px" onclick="alert('Opening pre-visit checklist…')">📋 Checklist</button>
+            <button class="topbar-btn btn-primary" style="flex:1;font-size:12px;padding:8px" onclick="alert('Generating visit plan…')">✨ Visit Plan</button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="fv-location-card" style="border-top:4px solid var(--sky)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+            <div style="width:52px;height:52px;border-radius:14px;background:rgba(91,141,184,0.15);display:flex;align-items:center;justify-content:center;font-size:28px">🐄</div>
+            <span class="fv-status planned">📌 Planned</span>
+          </div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:15px;font-weight:800;margin-bottom:4px">Uruli Kanchan Dairy Farm</h3>
+          <div style="font-size:12px;color:var(--ink-mid);margin-bottom:10px">🏫 Uruli Kanchan · 18 km · 40 min by bus</div>
+          <div style="font-size:12.5px;color:var(--ink-mid);margin-bottom:14px;line-height:1.5">Connect food production, animal care, and human services. Students observe milk processing and farm operations.</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
+            <span class="tag tag-orange">Life Forms</span>
+            <span class="tag tag-blue">Human Services</span>
+          </div>
+          <div style="background:var(--cream);border-radius:10px;padding:10px;font-size:12px;color:var(--ink-mid);margin-bottom:12px">
+            📅 <strong>Proposed:</strong> Week 3, May 2026<br>
+            🚌 <strong>Transport:</strong> Arranged (pending confirm)<br>
+            📞 <strong>Contact:</strong> +91 98765 43210
+          </div>
+          <div style="display:flex;gap:8px">
+            <button class="topbar-btn btn-outline" style="flex:1;font-size:12px;padding:8px" onclick="alert('Sending confirmation request…')">📨 Confirm Visit</button>
+            <button class="topbar-btn btn-primary" style="flex:1;font-size:12px;padding:8px" onclick="alert('Generating visit plan…')">✨ Visit Plan</button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="fv-location-card" style="border-top:4px solid var(--gold)">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px">
+            <div style="width:52px;height:52px;border-radius:14px;background:rgba(212,168,75,0.15);display:flex;align-items:center;justify-content:center;font-size:28px">🌲</div>
+            <span class="fv-status pending">⏳ Pending</span>
+          </div>
+          <h3 style="font-family:'Syne',sans-serif;font-size:15px;font-weight:800;margin-bottom:4px">Sinhagad Forest Walk</h3>
+          <div style="font-size:12px;color:var(--ink-mid);margin-bottom:10px">🏫 Sinhagad, Pune · 24 km · 55 min</div>
+          <div style="font-size:12.5px;color:var(--ink-mid);margin-bottom:14px;line-height:1.5">Biodiversity documentation in a real forest setting. Students identify tree species, insects, birds using Biodiversity Register framework.</div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px">
+            <span class="tag tag-green">Biodiversity</span>
+            <span class="tag tag-blue">Observation</span>
+          </div>
+          <div style="background:var(--cream);border-radius:10px;padding:10px;font-size:12px;color:var(--ink-mid);margin-bottom:12px">
+            📅 <strong>Proposed:</strong> TBD — need permission<br>
+            📋 <strong>Permission:</strong> Forest Dept. required<br>
+            ⚠️ <strong>Note:</strong> Pre-visit reconnaissance needed
+          </div>
+          <div style="display:flex;gap:8px">
+            <button class="topbar-btn btn-outline" style="flex:1;font-size:12px;padding:8px" onclick="alert('Generating permission letter…')">📄 Get Permission</button>
+            <button class="topbar-btn btn-primary" style="flex:1;font-size:12px;padding:8px" onclick="alert('Generating visit plan…')">✨ Visit Plan</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Suggest New Location -->
+      <div style="border:2px dashed var(--cream-dark);border-radius:16px;padding:20px;text-align:center;cursor:pointer;transition:all .2s" onmouseenter="this.style.borderColor='var(--terracotta)'" onmouseleave="this.style.borderColor='var(--cream-dark)'" onclick="alert('AI will suggest locations based on your syllabus…')">
+        <div style="font-size:36px;margin-bottom:8px">🔍</div>
+        <div style="font-family:'Syne',sans-serif;font-size:15px;font-weight:700;margin-bottom:4px">Find New Locations Near Me</div>
+        <div style="font-size:12.5px;color:var(--ink-mid)">AI suggests field visit spots within 30km based on your current topic and grade</div>
+      </div>
+    </div>
+
+    <!-- ── GUEST LECTURES PANEL ── -->
+    <div class="fv-panel" id="fv-guests">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+        <!-- Upcoming Guest -->
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:12px;color:var(--ink)">🎤 Scheduled Guest Lectures</div>
+          <div class="fv-guest-card" style="border-left:4px solid var(--sage);margin-bottom:12px">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+              <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--sage),#4A7A52);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#fff;font-family:'Syne',sans-serif">DK</div>
+              <div>
+                <div style="font-weight:700;font-size:14px">Dr. Dipti Kulkarni</div>
+                <div style="font-size:12px;color:var(--ink-mid)">Agricultural Scientist · MPKV Rahuri</div>
+              </div>
+              <span class="fv-status confirmed" style="margin-left:auto">✅ Confirmed</span>
+            </div>
+            <div style="background:var(--cream);border-radius:10px;padding:12px;font-size:12.5px;color:var(--ink-mid);margin-bottom:10px">
+              📅 <strong>Date:</strong> Monday, Apr 7 · 10:30 AM<br>
+              📚 <strong>Topic:</strong> "Soil Health & Organic Farming Techniques"<br>
+              ⏱️ <strong>Duration:</strong> 45 minutes + Q&A<br>
+              👥 <strong>Audience:</strong> Grade 6 + 7 (combined session)
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px">
+              <span class="tag tag-green">Kitchen Garden</span><span class="tag tag-green">Soil Science</span><span class="tag tag-blue">NEP Aligned</span>
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="topbar-btn btn-outline" style="flex:1;font-size:12px;padding:8px">📋 Pre-Questions</button>
+              <button class="topbar-btn btn-outline" style="flex:1;font-size:12px;padding:8px">📨 Send Reminder</button>
+            </div>
+          </div>
+
+          <div class="fv-guest-card" style="border-left:4px solid var(--sky)">
+            <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px">
+              <div style="width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--sky),#3A6D98);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:700;color:#fff;font-family:'Syne',sans-serif">AR</div>
+              <div>
+                <div style="font-weight:700;font-size:14px">Mr. Anil Raut</div>
+                <div style="font-size:12px;color:var(--ink-mid)">Master Craftsman · Pune Handicrafts</div>
+              </div>
+              <span class="fv-status planned" style="margin-left:auto">📌 Planned</span>
+            </div>
+            <div style="background:var(--cream);border-radius:10px;padding:12px;font-size:12.5px;color:var(--ink-mid);margin-bottom:10px">
+              📅 <strong>Date:</strong> Apr 18 (proposed)<br>
+              📚 <strong>Topic:</strong> "Maker Skills — Traditional Tools & Techniques"<br>
+              ⏱️ <strong>Duration:</strong> 60 minutes with demo<br>
+              🛠️ <strong>Note:</strong> Will bring tools for demonstration
+            </div>
+            <div style="display:flex;gap:8px">
+              <button class="topbar-btn btn-outline" style="flex:1;font-size:12px;padding:8px">📨 Send Invite</button>
+              <button class="topbar-btn btn-primary" style="flex:1;font-size:12px;padding:8px">✨ Plan Session</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Find New Expert -->
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin-bottom:12px;color:var(--ink)">🔍 Find a Guest Expert</div>
+          <div class="card" style="padding:20px">
+            <div class="form-group" style="margin-bottom:12px">
+              <label class="form-label">Current Topic / Project</label>
+              <select class="form-select" id="fv-topic-sel">
+                <option>🌱 Kitchen Garden</option><option>🦋 Biodiversity Register</option><option>⚙️ Maker Skills</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom:12px">
+              <label class="form-label">Expert Type</label>
+              <select class="form-select" id="fv-expert-sel">
+                <option>👩‍🌾 Farmer / Agriculturist</option><option>🔬 Botanist / Scientist</option><option>🌍 Environmental Expert</option><option>🛠️ Craftsman / Artisan</option><option>🏭 Industry Professional</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin-bottom:12px">
+              <label class="form-label">Preferred Date</label>
+              <input type="date" class="form-input" id="fv-date-inp">
+            </div>
+            <div class="form-group" style="margin-bottom:16px">
+              <label class="form-label">Mode</label>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+                <div onclick="selectGuestMode(this,'in-person')" class="fv-mode-btn selected">🏫 In-Person</div>
+                <div onclick="selectGuestMode(this,'virtual')" class="fv-mode-btn">💻 Virtual</div>
+              </div>
+            </div>
+            <button class="generate-btn" style="margin-top:0" onclick="findGuestExperts()">🔍 Find Nearby Experts</button>
+          </div>
+
+          <!-- Expert Results -->
+          <div id="fv-expert-results" style="display:none;margin-top:14px">
+            <div style="font-size:12px;font-weight:600;color:var(--ink-mid);margin-bottom:10px;text-transform:uppercase;letter-spacing:0.5px">AI Suggestions</div>
+            <div class="reminder-item"><div class="reminder-icon success">👩‍🔬</div><div class="reminder-text"><strong>Dr. Meena Jagtap — Agri Dept, Pune</strong>Available · 8 km away · Teaches soil + composting<div class="reminder-time">⭐ 4.9 · 12 school visits done</div></div><button class="topbar-btn btn-primary" style="font-size:11px;padding:5px 10px;margin-left:auto;white-space:nowrap" onclick="alert('Sending invite…')">Invite</button></div>
+            <div class="reminder-item"><div class="reminder-icon info">👨‍🌾</div><div class="reminder-text"><strong>Shri. Ganesh Pawar — Organic Farmer</strong>Available · Saswad · Expert in vermicompost<div class="reminder-time">⭐ 4.7 · 5 guest talks done</div></div><button class="topbar-btn btn-outline" style="font-size:11px;padding:5px 10px;margin-left:auto;white-space:nowrap" onclick="alert('Sending invite…')">Invite</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── EVENT PLANNER PANEL ── -->
+    <div class="fv-panel" id="fv-planner">
+      <div class="card">
+        <div class="card-header"><span class="card-title">📋 Full Academic Year — Event Calendar</span><button class="topbar-btn btn-primary" style="font-size:12px;padding:7px 14px" onclick="alert('Exporting calendar to PDF…')">📥 Export Calendar</button></div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px">
+          <!-- Term 1 Events -->
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:10px;padding:8px 12px;background:rgba(122,158,126,0.12);border-radius:8px;color:var(--sage)">🌿 Term 1 · Jun–Sep 2025</div>
+            <div class="fv-event-item done">✅ Saswad Nursery Visit <span style="color:rgba(74,53,32,0.4);font-size:11px">Jul 10</span></div>
+            <div class="fv-event-item done">✅ Dr. Patel — Soil Science Talk <span style="color:rgba(74,53,32,0.4);font-size:11px">Aug 2</span></div>
+            <div class="fv-event-item done">✅ School Garden Inauguration <span style="color:rgba(74,53,32,0.4);font-size:11px">Aug 20</span></div>
+          </div>
+          <!-- Term 2 Events -->
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:10px;padding:8px 12px;background:rgba(91,141,184,0.12);border-radius:8px;color:var(--sky)">🦋 Term 2 · Oct–Jan 2026</div>
+            <div class="fv-event-item done">✅ Sinhagad Forest Walk <span style="color:rgba(74,53,32,0.4);font-size:11px">Oct 14</span></div>
+            <div class="fv-event-item done">✅ Ornithologist Guest Talk <span style="color:rgba(74,53,32,0.4);font-size:11px">Nov 5</span></div>
+            <div class="fv-event-item done">✅ Uruli Dairy Farm Visit <span style="color:rgba(74,53,32,0.4);font-size:11px">Dec 12</span></div>
+          </div>
+          <!-- Term 3 Events -->
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-size:13px;font-weight:700;margin-bottom:10px;padding:8px 12px;background:rgba(200,75,47,0.1);border-radius:8px;color:var(--terracotta)">⚙️ Term 3 · Feb–May 2026</div>
+            <div class="fv-event-item upcoming">📅 Dr. Kulkarni — Soil Talk <span style="color:rgba(74,53,32,0.4);font-size:11px">Apr 7</span></div>
+            <div class="fv-event-item planned">📌 Mr. Raut — Maker Skills <span style="color:rgba(74,53,32,0.4);font-size:11px">Apr 18</span></div>
+            <div class="fv-event-item pending2">⏳ Local Factory Visit <span style="color:rgba(74,53,32,0.4);font-size:11px">TBD</span></div>
+            <div style="margin-top:10px;padding:10px;border:2px dashed var(--cream-dark);border-radius:10px;text-align:center;cursor:pointer;font-size:12.5px;color:var(--terracotta);font-weight:600" onclick="alert('Add new event…')">+ Add Event</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>
+
