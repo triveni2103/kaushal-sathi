@@ -37,6 +37,20 @@ function showPage(id, navEl) {
   if (id === 'timetable') updateTimetable();
 }
 
+function showProjectDetail(detailId) {
+  showPage('projects', null);
+  document.querySelectorAll('.project-summary-card').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.proj-detail-card').forEach(d => d.classList.remove('visible', 'highlighted'));
+  const summary = document.querySelector(`[data-detail-target="${detailId}"]`);
+  if (summary) summary.classList.add('active');
+  const detail = document.getElementById(detailId);
+  if (!detail) return;
+  detail.classList.add('visible');
+  detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  detail.classList.add('highlighted');
+  setTimeout(() => detail.classList.remove('highlighted'), 900);
+}
+
 /* ══════════════════════════════════════
    ASSESSMENT PANEL
 ══════════════════════════════════════ */
