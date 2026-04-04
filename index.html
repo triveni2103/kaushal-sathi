@@ -28,28 +28,31 @@
 
   <nav class="sidebar-nav">
     <div class="nav-section-label">Main</div>
-    <div class="nav-item active" id="nav-home" data-label="Home" onclick="showPage('home', this)">
-      <div class="icon">🏡</div> Home
-    </div>
     <div class="nav-item" data-label="Dashboard" onclick="showPage('dashboard', this)">
-      <div class="icon">🏠</div> Dashboard
-    </div>
-    <div class="nav-item" data-label="Timetable" onclick="showPage('timetable', this)">
-      <div class="icon">🗓️</div> Timetable
+      <div class="icon">📈</div> Dashboard
     </div>
     <div class="nav-item" data-label="AI Lesson Plan" onclick="showPage('lessonplan', this)">
       <div class="icon">✨</div> AI Lesson Plan
     </div>
-    <div class="nav-item" data-label="Content Repository" onclick="showPage('content', this)">
-      <div class="icon">📚</div> Content Repository
-    </div>
-    <div class="nav-section-label">Teaching</div>
     <div class="nav-item" data-label="Projects" onclick="showPage('projects', this)">
       <div class="icon">🌱</div> Projects
+    </div>
+    <div class="nav-item" data-label="Content Repository" onclick="showPage('content', this)">
+      <div class="icon">📚</div> Content Repository
     </div>
     <div class="nav-item" data-label="Assessments" onclick="showPage('assessments', this)">
       <div class="icon">📝</div> Assessments
     </div>
+    <div class="nav-item" data-label="Field Visits" onclick="showPage('fieldvisits', this)">
+      <div class="icon">🗺️</div> Field Visits
+    </div>
+    <div class="nav-item" data-label="Timetable" onclick="showPage('timetable', this)">
+      <div class="icon">🗓️</div> Timetable
+    </div>
+    <div class="nav-item" data-label="Gamified Zone" onclick="showPage('gamified', this)">
+      <div class="icon">🏆</div> Gamified Zone
+    </div>
+    <div class="nav-section-label">Teaching & Integration</div>
     <div class="nav-item" data-label="Subject Integration" onclick="showPage('subjects', this)">
       <div class="icon">🔗</div> Subject Integration
     </div>
@@ -57,16 +60,10 @@
     <div class="nav-item" data-label="Chat with Me" onclick="showPage('chat', this)">
       <div class="icon">💬</div> Chat with Me
     </div>
-    <div class="nav-item" data-label="Field Visits" onclick="showPage('fieldvisits', this)">
-      <div class="icon">🗺️</div> Field Visits
-    </div>
     <div class="nav-item" data-label="Notifications" onclick="showPage('notifications', this)">
       <div class="icon">🔔</div> Notifications
     </div>
-    <div class="nav-section-label">Achievements</div>
-    <div class="nav-item" data-label="Gamified Zone" onclick="showPage('gamified', this)">
-      <div class="icon">🏆</div> Gamified Zone
-    </div>
+    <div class="nav-section-label">Achievements & Insights</div>
     <div class="nav-item" data-label="Success Stories" onclick="showPage('stories', this)">
       <div class="icon">⭐</div> Success Stories
     </div>
@@ -103,10 +100,6 @@
 
   <!-- ── HOME ── -->
   <div class="content active" id="page-home">
-    <!-- Announcement Banner -->
-    <div style="background:linear-gradient(90deg,var(--terracotta),var(--terracotta-dark));color:#fff;text-align:center;padding:10px 20px;font-size:13px;font-weight:500;margin:-28px -32px 0;position:sticky;top:60px;z-index:10;">
-      🌟 Kaushal Saathi — AI-Powered Teacher Platform · Free for all Teachers · Always private
-    </div>
 
     <!-- Hero Section -->
     <div style="text-align:center;padding:44px 20px 32px;">
@@ -120,16 +113,81 @@
       </p>
     </div>
 
+    <!-- Teacher's Story Carousel -->
+    <div style="margin: 32px 0 24px; overflow-x: auto; scrollbar-width: thin; scrollbar-color: var(--cream-dark) transparent;">
+      <div style="display: flex; gap: 16px; min-width: max-content; padding: 0 4px;">
+        <!-- Story Card 1 -->
+        <div style="background: var(--card-bg); border: 1px solid var(--cream-dark); border-radius: 16px; padding: 16px; min-width: 280px; box-shadow: var(--shadow); flex-shrink: 0;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--sage), var(--gold)); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;">SP</div>
+            <div>
+              <div style="font-size: 12px; font-weight: 600; color: var(--ink);">Sunita Patil</div>
+              <div style="font-size: 10px; color: var(--ink-mid);">Navjeevan School, Nashik</div>
+            </div>
+          </div>
+          <div style="font-size: 13px; color: var(--ink-mid); line-height: 1.4; margin-bottom: 8px;">
+            "From Waste to Wealth — Our Vermicompost Journey transformed how my students see sustainability!"
+          </div>
+          <div style="font-size: 11px; color: var(--terracotta); font-weight: 500;">⭐ Story of the Week</div>
+        </div>
+
+        <!-- Story Card 2 -->
+        <div style="background: var(--card-bg); border: 1px solid var(--cream-dark); border-radius: 16px; padding: 16px; min-width: 280px; box-shadow: var(--shadow); flex-shrink: 0;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--sky), var(--terracotta)); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;">RK</div>
+            <div>
+              <div style="font-size: 12px; font-weight: 600; color: var(--ink);">Rajesh Kumar</div>
+              <div style="font-size: 10px; color: var(--ink-mid);">Delhi Public School, Jaipur</div>
+            </div>
+          </div>
+          <div style="font-size: 13px; color: var(--ink-mid); line-height: 1.4; margin-bottom: 8px;">
+            "AI Lesson Plans saved me 5 hours weekly! My students are more engaged than ever."
+          </div>
+          <div style="font-size: 11px; color: var(--gold); font-weight: 500;">🏆 Top Contributor</div>
+        </div>
+
+        <!-- Story Card 3 -->
+        <div style="background: var(--card-bg); border: 1px solid var(--cream-dark); border-radius: 16px; padding: 16px; min-width: 280px; box-shadow: var(--shadow); flex-shrink: 0;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--terracotta), var(--gold)); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;">AM</div>
+            <div>
+              <div style="font-size: 12px; font-weight: 600; color: var(--ink);">Anita Mehta</div>
+              <div style="font-size: 10px; color: var(--ink-mid);">Kendriya Vidyalaya, Mumbai</div>
+            </div>
+          </div>
+          <div style="font-size: 13px; color: var(--ink-mid); line-height: 1.4; margin-bottom: 8px;">
+            "Field Visits module helped organize 3 successful educational trips this year!"
+          </div>
+          <div style="font-size: 11px; color: var(--sky); font-weight: 500;">🌟 Inspiring Teacher</div>
+        </div>
+
+        <!-- Story Card 4 -->
+        <div style="background: var(--card-bg); border: 1px solid var(--cream-dark); border-radius: 16px; padding: 16px; min-width: 280px; box-shadow: var(--shadow); flex-shrink: 0;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--sage)); display: flex; align-items: center; justify-content: center; font-size: 14px; font-weight: 700;">VS</div>
+            <div>
+              <div style="font-size: 12px; font-weight: 600; color: var(--ink);">Vikram Singh</div>
+              <div style="font-size: 10px; color: var(--ink-mid);">Government School, Chandigarh</div>
+            </div>
+          </div>
+          <div style="font-size: 13px; color: var(--ink-mid); line-height: 1.4; margin-bottom: 8px;">
+            "Gamified Zone increased my students' participation by 300%! Learning is now fun."
+          </div>
+          <div style="font-size: 11px; color: var(--terracotta); font-weight: 500;">🎯 Success Story</div>
+        </div>
+      </div>
+    </div>
+
     <!-- Feature Cards Grid Row 1 -->
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:20px;">
 
       <!-- Card 1: Dashboard -->
       <div class="home-feature-card" onclick="showPage('dashboard',null)" style="cursor:pointer;">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#22a45d,#1a7a46);display:flex;align-items:center;justify-content:center;font-size:26px;">🏠</div>
+          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#22a45d,#1a7a46);display:flex;align-items:center;justify-content:center;font-size:26px;">📈</div>
           <span style="background:#22a45d;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">✓</span>
         </div>
-        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">My Dashboard</h3>
+        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">Dashboard</h3>
         <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">Your teaching overview at a glance</p>
         <ul style="list-style:none;padding:0;margin-bottom:14px;">
           <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#22a45d;flex-shrink:0;">✓</span> Active projects & progress tracking</li>
@@ -139,52 +197,52 @@
         <button onclick="event.stopPropagation();showPage('dashboard',null)" style="width:100%;padding:10px;background:#22a45d;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Go to Dashboard</button>
       </div>
 
-      <!-- Card 2: Chat with AI -->
-      <div class="home-feature-card" onclick="showPage('chat',null)" style="cursor:pointer;">
+      <!-- Card 2: AI Lesson Plan -->
+      <div class="home-feature-card" onclick="showPage('lessonplan',null)" style="cursor:pointer;">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#8b5cf6,#6d28d9);display:flex;align-items:center;justify-content:center;font-size:26px;">💬</div>
+          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#8b5cf6,#6d28d9);display:flex;align-items:center;justify-content:center;font-size:26px;">✨</div>
           <span style="background:#8b5cf6;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">✓</span>
         </div>
-        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">Chat with AI</h3>
-        <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">Your intelligent teaching assistant</p>
+        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">AI Lesson Plan</h3>
+        <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">Generate personalized lesson plans</p>
         <ul style="list-style:none;padding:0;margin-bottom:14px;">
-          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#8b5cf6;flex-shrink:0;">✓</span> Instant answers to classroom questions</li>
-          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#8b5cf6;flex-shrink:0;">✓</span> Multilingual support (Marathi, Hindi, English)</li>
-          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#8b5cf6;flex-shrink:0;">✓</span> Quick prompts for lesson ideas</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#8b5cf6;flex-shrink:0;">✓</span> NEP-aligned curriculum planning</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#8b5cf6;flex-shrink:0;">✓</span> Activity-based learning focus</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#8b5cf6;flex-shrink:0;">✓</span> Multilingual content support</li>
         </ul>
-        <button onclick="event.stopPropagation();showPage('chat',null)" style="width:100%;padding:10px;background:#8b5cf6;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Start Chatting</button>
+        <button onclick="event.stopPropagation();showPage('lessonplan',null)" style="width:100%;padding:10px;background:#8b5cf6;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Create Lesson Plan</button>
       </div>
 
-      <!-- Card 3: Content Repository -->
+      <!-- Card 3: Projects -->
+      <div class="home-feature-card" onclick="showPage('projects',null)" style="cursor:pointer;">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#3b82f6,#1d4ed8);display:flex;align-items:center;justify-content:center;font-size:26px;">🌱</div>
+          <span style="background:#3b82f6;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">✓</span>
+        </div>
+        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">Projects</h3>
+        <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">Manage learning projects & activities</p>
+        <ul style="list-style:none;padding:0;margin-bottom:14px;">
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#3b82f6;flex-shrink:0;">✓</span> Kitchen Garden, Biodiversity & more</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#3b82f6;flex-shrink:0;">✓</span> Activity-wise progress tracking</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#3b82f6;flex-shrink:0;">✓</span> Collaborative & self-paced options</li>
+        </ul>
+        <button onclick="event.stopPropagation();showPage('projects',null)" style="width:100%;padding:10px;background:#3b82f6;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">View Projects</button>
+      </div>
+
+      <!-- Card 4: Content Repository -->
       <div class="home-feature-card" onclick="showPage('content',null)" style="cursor:pointer;">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#3b82f6,#1d4ed8);display:flex;align-items:center;justify-content:center;font-size:26px;">📚</div>
-          <span style="background:#3b82f6;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">✓</span>
+          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#f59e0b,#d97706);display:flex;align-items:center;justify-content:center;font-size:26px;">📚</div>
+          <span style="background:#f59e0b;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">✓</span>
         </div>
         <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">Content Repository</h3>
         <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">Curated teaching materials library</p>
         <ul style="list-style:none;padding:0;margin-bottom:14px;">
-          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#3b82f6;flex-shrink:0;">✓</span> Grade 1–8 curriculum materials</li>
-          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#3b82f6;flex-shrink:0;">✓</span> NEP-aligned activity resources</li>
-          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#3b82f6;flex-shrink:0;">✓</span> Multilingual content available</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#f59e0b;flex-shrink:0;">✓</span> Grade 1–8 curriculum materials</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#f59e0b;flex-shrink:0;">✓</span> NEP-aligned activity resources</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#f59e0b;flex-shrink:0;">✓</span> Multilingual content available</li>
         </ul>
-        <button onclick="event.stopPropagation();showPage('content',null)" style="width:100%;padding:10px;background:#3b82f6;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Browse Content</button>
-      </div>
-
-      <!-- Card 4: Timetable -->
-      <div class="home-feature-card" onclick="showPage('timetable',null)" style="cursor:pointer;">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#f59e0b,#d97706);display:flex;align-items:center;justify-content:center;font-size:26px;">🗓️</div>
-          <span style="background:#f59e0b;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">✓</span>
-        </div>
-        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">Smart Timetable</h3>
-        <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">AI-powered period & syllabus planner</p>
-        <ul style="list-style:none;padding:0;margin-bottom:14px;">
-          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#f59e0b;flex-shrink:0;">✓</span> Auto-schedule remaining syllabus</li>
-          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#f59e0b;flex-shrink:0;">✓</span> Term-wise period breakdown</li>
-          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#f59e0b;flex-shrink:0;">✓</span> Completion alerts & pace tips</li>
-        </ul>
-        <button onclick="event.stopPropagation();showPage('timetable',null)" style="width:100%;padding:10px;background:#f59e0b;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Plan My Timetable</button>
+        <button onclick="event.stopPropagation();showPage('content',null)" style="width:100%;padding:10px;background:#f59e0b;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Browse Content</button>
       </div>
 
     </div>
@@ -192,20 +250,20 @@
     <!-- Feature Cards Grid Row 2 -->
     <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:36px;">
 
-      <!-- Card 5: Projects -->
-      <div class="home-feature-card" onclick="showPage('projects',null)" style="cursor:pointer;">
+      <!-- Card 5: Assessments -->
+      <div class="home-feature-card" onclick="showPage('assessments',null)" style="cursor:pointer;">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#22a45d,#1a7a46);display:flex;align-items:center;justify-content:center;font-size:26px;">🌱</div>
+          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#22a45d,#1a7a46);display:flex;align-items:center;justify-content:center;font-size:26px;">📝</div>
           <span style="background:#22a45d;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">✓</span>
         </div>
-        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">Projects</h3>
-        <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">Manage learning projects & activities</p>
+        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">Assessments</h3>
+        <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">Evaluate & track student progress</p>
         <ul style="list-style:none;padding:0;margin-bottom:14px;">
-          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#22a45d;flex-shrink:0;">✓</span> Kitchen Garden, Biodiversity & more</li>
-          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#22a45d;flex-shrink:0;">✓</span> Activity-wise progress tracking</li>
-          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#22a45d;flex-shrink:0;">✓</span> Collaborative & self-paced options</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#22a45d;flex-shrink:0;">✓</span> Writing, oral & portfolio assessments</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#22a45d;flex-shrink:0;">✓</span> Auto-grading with rubric builder</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#22a45d;flex-shrink:0;">✓</span> Detailed result reports & insights</li>
         </ul>
-        <button onclick="event.stopPropagation();showPage('projects',null)" style="width:100%;padding:10px;background:#22a45d;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">View Projects</button>
+        <button onclick="event.stopPropagation();showPage('assessments',null)" style="width:100%;padding:10px;background:#22a45d;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Create Assessment</button>
       </div>
 
       <!-- Card 6: Field Visits -->
@@ -224,20 +282,20 @@
         <button onclick="event.stopPropagation();showPage('fieldvisits',null)" style="width:100%;padding:10px;background:#f97316;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Explore Visits</button>
       </div>
 
-      <!-- Card 7: Assessments -->
-      <div class="home-feature-card" onclick="showPage('assessments',null)" style="cursor:pointer;">
+      <!-- Card 7: Timetable -->
+      <div class="home-feature-card" onclick="showPage('timetable',null)" style="cursor:pointer;">
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
-          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#06b6d4,#0891b2);display:flex;align-items:center;justify-content:center;font-size:26px;">📝</div>
+          <div style="width:52px;height:52px;border-radius:14px;background:linear-gradient(135deg,#06b6d4,#0891b2);display:flex;align-items:center;justify-content:center;font-size:26px;">🗓️</div>
           <span style="background:#06b6d4;color:#fff;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;">✓</span>
         </div>
-        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">Assessments</h3>
-        <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">Evaluate & track student progress</p>
+        <h3 style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px;">Timetable</h3>
+        <p style="font-size:11.5px;color:var(--ink-mid);margin-bottom:10px;">AI-powered period & syllabus planner</p>
         <ul style="list-style:none;padding:0;margin-bottom:14px;">
-          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#06b6d4;flex-shrink:0;">✓</span> Writing, oral & portfolio assessments</li>
-          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#06b6d4;flex-shrink:0;">✓</span> Auto-grading with rubric builder</li>
-          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#06b6d4;flex-shrink:0;">✓</span> Detailed result reports & insights</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#06b6d4;flex-shrink:0;">✓</span> Auto-schedule remaining syllabus</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#06b6d4;flex-shrink:0;">✓</span> Term-wise period breakdown</li>
+          <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#06b6d4;flex-shrink:0;">✓</span> Completion alerts & pace tips</li>
         </ul>
-        <button onclick="event.stopPropagation();showPage('assessments',null)" style="width:100%;padding:10px;background:#06b6d4;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Create Assessment</button>
+        <button onclick="event.stopPropagation();showPage('timetable',null)" style="width:100%;padding:10px;background:#06b6d4;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Plan Timetable</button>
       </div>
 
       <!-- Card 8: Gamified Zone -->
@@ -253,7 +311,7 @@
           <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#ef4444;flex-shrink:0;">✓</span> Syllabus puzzles & KBC-style quizzes</li>
           <li style="font-size:12px;color:var(--ink-mid);padding:3px 0;display:flex;gap:6px;align-items:flex-start;"><span style="color:#ef4444;flex-shrink:0;">✓</span> Weekly school leaderboard</li>
         </ul>
-        <button onclick="event.stopPropagation();showPage('gamified',null)" style="width:100%;padding:10px;background:#ef4444;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Start Earning Points</button>
+        <button onclick="event.stopPropagation();showPage('gamified',null)" style="width:100%;padding:10px;background:#ef4444;color:#fff;border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;">Start Playing</button>
       </div>
 
     </div>
@@ -295,6 +353,15 @@
       <p>Tuesday, 31 March 2026 · Term 3 · Week 8 · Project: Kitchen Garden</p>
     </div>
 
+    <!-- Active Screen Indicator -->
+    <div style="background: linear-gradient(135deg, var(--terracotta), var(--terracotta-dark)); color: #fff; border-radius: 12px; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 12px; box-shadow: var(--shadow);">
+      <div style="font-size: 24px;">📈</div>
+      <div>
+        <div style="font-family: 'Syne', sans-serif; font-size: 18px; font-weight: 700;">Dashboard</div>
+        <div style="font-size: 12px; opacity: 0.9;">Your teaching overview and quick actions</div>
+      </div>
+    </div>
+
     <div class="stats-row">
       <div class="stat-card green">
         <div class="stat-label">Active Projects</div>
@@ -305,11 +372,6 @@
         <div class="stat-label">Periods Done</div>
         <div class="stat-value">127</div>
         <div class="stat-sub">of 189 total periods</div>
-      </div>
-      <div class="stat-card gold">
-        <div class="stat-label">Avg. Score</div>
-        <div class="stat-value">74%</div>
-        <div class="stat-sub">Across all assessments</div>
       </div>
       <div class="stat-card red">
         <div class="stat-label">Streak</div>
@@ -757,8 +819,7 @@
         <!-- Auto report output -->
         <div class="auto-report" id="report-written" style="display:none">
           <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;margin-bottom:12px">📊 Auto-Generated Report — Written Assessment</div>
-          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px">
-            <div style="background:rgba(122,158,126,0.1);border-radius:10px;padding:14px;text-align:center"><div style="font-size:24px;font-weight:800;color:#22C55E;font-family:'Syne',sans-serif">24.3</div><div style="font-size:11px;color:var(--ink-mid)">Class Average / 30</div></div>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-bottom:16px">
             <div style="background:rgba(91,141,184,0.1);border-radius:10px;padding:14px;text-align:center"><div style="font-size:24px;font-weight:800;color:var(--sky);font-family:'Syne',sans-serif">81%</div><div style="font-size:11px;color:var(--ink-mid)">Pass Rate</div></div>
             <div style="background:rgba(212,168,75,0.1);border-radius:10px;padding:14px;text-align:center"><div style="font-size:24px;font-weight:800;color:var(--gold);font-family:'Syne',sans-serif">Sneha</div><div style="font-size:11px;color:var(--ink-mid)">Top Performer</div></div>
           </div>
@@ -851,7 +912,7 @@
         </table>
         <div class="auto-report" id="report-portfolio" style="display:none">
           <div style="font-family:'Syne',sans-serif;font-size:16px;font-weight:800;margin-bottom:12px">📊 Auto-Generated Report — Portfolio</div>
-          <div style="font-size:13px;color:var(--ink-mid);line-height:1.6;background:var(--cream);border-radius:10px;padding:14px">Portfolio scores are excellent — class average is 8.7/10. Sneha More achieved a perfect score. Recommend displaying top portfolios at school exhibition.</div>
+          <div style="font-size:13px;color:var(--ink-mid);line-height:1.6;background:var(--cream);border-radius:10px;padding:14px">Portfolio scores are excellent. Sneha More achieved a perfect score. Recommend displaying top portfolios at school exhibition.</div>
           <div style="display:flex;gap:10px;margin-top:12px"><button class="topbar-btn btn-outline" onclick="alert('Exporting…')">📥 Export PDF</button><button class="topbar-btn btn-outline" onclick="alert('Exporting…')">📊 Export Excel</button></div>
         </div>
       </div>
@@ -890,7 +951,7 @@
           </tbody>
         </table>
         <div class="auto-report" id="report-activity" style="display:none">
-          <div style="font-size:13px;color:var(--ink-mid);background:var(--cream);border-radius:10px;padding:14px;margin-top:16px">Activity Book report generated. Class average: 11.5/15. Good completion rate; diagram quality can be improved with more observation practice.</div>
+          <div style="font-size:13px;color:var(--ink-mid);background:var(--cream);border-radius:10px;padding:14px;margin-top:16px">Activity Book report generated. Good completion rate; diagram quality can be improved with more observation practice.</div>
           <div style="display:flex;gap:10px;margin-top:12px"><button class="topbar-btn btn-outline" onclick="alert('Exporting…')">📥 Export PDF</button><button class="topbar-btn btn-outline" onclick="alert('Exporting…')">📊 Export Excel</button></div>
         </div>
       </div>
