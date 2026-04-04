@@ -103,14 +103,21 @@
 
     <!-- Hero Section -->
     <div style="text-align:center;padding:44px 20px 32px;">
-      <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:14px;">
+      <div style="display:inline-flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;justify-content:center;">
         <span style="font-size:36px;">🌱</span>
         <h1 style="font-family:'Syne',sans-serif;font-size:32px;font-weight:800;color:var(--ink);">Kaushal Saathi — Teacher Platform</h1>
       </div>
       <p style="font-size:14.5px;color:var(--ink-mid);max-width:700px;margin:0 auto;line-height:1.8;">
-        Your complete teaching companion — generate AI lesson plans, manage projects, track assessments, and connect with experts.<br>
-    
+        Your complete teaching companion — generate AI lesson plans, manage projects, track assessments, and connect with experts.
       </p>
+    </div>
+
+    <!-- Homepage quick actions -->
+    <div class="home-quick-actions">
+      <button onclick="showPage('dashboard', null)">Dashboard</button>
+      <button onclick="showPage('projects', null)">Projects</button>
+      <button onclick="showPage('lessonplan', null)">AI Lesson Plan</button>
+      <button onclick="showPage('chat', null)">Chat</button>
     </div>
 
     <!-- Teacher's Story Carousel -->
@@ -179,7 +186,7 @@
     </div>
 
     <!-- Feature Cards Grid Row 1 -->
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:20px;">
+    <div class="home-card-row">
 
       <!-- Card 1: Dashboard -->
       <div class="home-feature-card" onclick="showPage('dashboard',null)" style="cursor:pointer;">
@@ -248,7 +255,7 @@
     </div>
 
     <!-- Feature Cards Grid Row 2 -->
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-bottom:36px;">
+    <div class="home-card-row">
 
       <!-- Card 5: Assessments -->
       <div class="home-feature-card" onclick="showPage('assessments',null)" style="cursor:pointer;">
@@ -1516,10 +1523,73 @@
     </div>
 
     <!-- Project Cards -->
+    <div class="project-summary-grid">
+      <div class="project-summary-card" data-detail-target="proj-kitchen-garden" onclick="showProjectDetail('proj-kitchen-garden')">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;">
+          <div>
+            <div style="font-size:14px;font-weight:700;color:var(--ink);">School Kitchen Garden</div>
+            <div style="font-size:12px;color:var(--ink-mid);margin-top:4px;">Life Forms · Term 1</div>
+          </div>
+          <span class="proj-status-badge ongoing" style="padding:5px 10px;font-size:11px;">Ongoing</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span style="font-size:24px;font-weight:800;color:#EAB308;">60%</span>
+          <div style="flex:1;height:8px;border-radius:999px;background:#F1F5F9;overflow:hidden;">
+            <div style="width:60%;height:100%;background:#EAB308;border-radius:999px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="project-summary-card" data-detail-target="proj-biodiversity-register" onclick="showProjectDetail('proj-biodiversity-register')">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;">
+          <div>
+            <div style="font-size:14px;font-weight:700;color:var(--ink);">Biodiversity Register</div>
+            <div style="font-size:12px;color:var(--ink-mid);margin-top:4px;">Life Forms · Term 2</div>
+          </div>
+          <span class="proj-status-badge done" style="padding:5px 10px;font-size:11px;">Completed</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span style="font-size:24px;font-weight:800;color:#22C55E;">100%</span>
+          <div style="flex:1;height:8px;border-radius:999px;background:#F1F5F9;overflow:hidden;">
+            <div style="width:100%;height:100%;background:#22C55E;border-radius:999px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="project-summary-card" data-detail-target="proj-maker-skills" onclick="showProjectDetail('proj-maker-skills')">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;">
+          <div>
+            <div style="font-size:14px;font-weight:700;color:var(--ink);">Maker Skills</div>
+            <div style="font-size:12px;color:var(--ink-mid);margin-top:4px;">Machines · Term 3</div>
+          </div>
+          <span class="proj-status-badge behind" style="padding:5px 10px;font-size:11px;">Behind</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span style="font-size:24px;font-weight:800;color:#EF4444;">30%</span>
+          <div style="flex:1;height:8px;border-radius:999px;background:#F1F5F9;overflow:hidden;">
+            <div style="width:30%;height:100%;background:#EF4444;border-radius:999px"></div>
+          </div>
+        </div>
+      </div>
+      <div class="project-summary-card" data-detail-target="proj-cooking-without-fire" onclick="showProjectDetail('proj-cooking-without-fire')">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;">
+          <div>
+            <div style="font-size:14px;font-weight:700;color:var(--ink);">Cooking without Fire</div>
+            <div style="font-size:12px;color:var(--ink-mid);margin-top:4px;">Upcoming · Grade 7</div>
+          </div>
+          <span class="proj-status-badge notstarted" style="padding:5px 10px;font-size:11px;">Not Started</span>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
+          <span style="font-size:24px;font-weight:800;color:#94A3B8;">0%</span>
+          <div style="flex:1;height:8px;border-radius:999px;background:#F1F5F9;overflow:hidden;">
+            <div style="width:0%;height:100%;background:#94A3B8;border-radius:999px"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div style="display:flex;flex-direction:column;gap:20px">
 
       <!-- PROJECT 1: Kitchen Garden -->
-      <div class="proj-detail-card">
+      <div class="proj-detail-card" id="proj-kitchen-garden">
         <div class="proj-detail-header" style="border-left:5px solid #EAB308">
           <div style="display:flex;align-items:center;gap:14px">
             <div style="font-size:40px">🌿</div>
@@ -1564,7 +1634,7 @@
       </div>
 
       <!-- PROJECT 2: Biodiversity Register -->
-      <div class="proj-detail-card">
+      <div class="proj-detail-card" id="proj-biodiversity-register">
         <div class="proj-detail-header" style="border-left:5px solid #22C55E">
           <div style="display:flex;align-items:center;gap:14px">
             <div style="font-size:40px">🦋</div>
@@ -1603,7 +1673,7 @@
       </div>
 
       <!-- PROJECT 3: Maker Skills -->
-      <div class="proj-detail-card">
+      <div class="proj-detail-card" id="proj-maker-skills">
         <div class="proj-detail-header" style="border-left:5px solid #EF4444">
           <div style="display:flex;align-items:center;gap:14px">
             <div style="font-size:40px">⚙️</div>
@@ -1644,7 +1714,7 @@
       </div>
 
       <!-- PROJECT 4: Cooking without Fire — Not Started -->
-      <div class="proj-detail-card" style="opacity:0.7">
+      <div class="proj-detail-card" id="proj-cooking-without-fire" style="opacity:0.7">
         <div class="proj-detail-header" style="border-left:5px solid #E5E7EB">
           <div style="display:flex;align-items:center;gap:14px">
             <div style="font-size:40px">🍳</div>
