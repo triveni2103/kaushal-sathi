@@ -10,13 +10,13 @@ function showPage(id, navEl) {
   }
   const titles = {
     home: 'Home — Kaushal Saathi',
-    dashboard: 'Dashboard', lessonplan: 'AI Lesson Plan Generator',
-    assessments: 'Assessments', timetable: 'Smart Timetable',
-    chat: 'Chat with AI', notifications: 'Important Notifications',
+    dashboard: 'Dashboard', lessonplan: 'AI Lesson Plan',
+    assessments: 'Assessments', timetable: 'Timetable',
+    chat: 'Chat with Me', notifications: 'Notifications',
     gamified: 'Gamified Zone', stories: 'Success Stories',
     reports: 'Generate Report', projects: 'Projects',
     content: 'Content Repository', subjects: 'Subject Integration',
-    fieldvisits: 'Field Visits & Guest Lectures'
+    fieldvisits: 'Field Visits'
   };
   document.getElementById('page-title').textContent = titles[id] || id;
 
@@ -794,6 +794,9 @@ function toggleSidebar() {
   if (isOpen) {
     closeSidebar();
   } else {
+    if (sidebar.style.display === 'none') {
+      sidebar.style.display = '';
+    }
     sidebar.classList.add('open');
     overlay.classList.add('visible');
     toggle.classList.add('open');
@@ -807,6 +810,9 @@ function closeSidebar() {
   sidebar.classList.remove('open');
   overlay.classList.remove('visible');
   toggle.classList.remove('open');
+  if (document.getElementById('page-home').classList.contains('active')) {
+    sidebar.style.display = 'none';
+  }
 }
 
 // Close sidebar on nav item click (mobile)
