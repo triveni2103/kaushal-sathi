@@ -1291,3 +1291,63 @@ textarea.form-input { resize: vertical; min-height: 80px; }
     #page-home [style*="grid-template-columns:repeat(3,1fr)"] { grid-template-columns: 1fr !important; }
     #page-home [style*="display:flex;gap:30px"] { flex-direction: column !important; }
   }
+
+/* Teacher's Story Carousel */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--cream-dark); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--ink-mid); }
+
+/* Enhanced responsiveness for all screens */
+@media (max-width: 1024px) {
+  .chat-layout { grid-template-columns: 1fr; height: auto; }
+  .chat-input-row { flex-direction: column; }
+  .send-btn, .voice-btn { width: 100%; }
+  .timetable-overview { grid-template-columns: 1fr; }
+  .streak-hero { flex-direction: column; align-items: flex-start; padding: 24px; gap: 20px; }
+  .streak-fire { font-size: 56px; }
+  .streak-info h2 { font-size: 32px; }
+  .streak-milestones { flex-direction: column; gap: 12px; }
+  .gamify-grid { grid-template-columns: 1fr; }
+  .cr-tabs { flex-wrap: wrap; }
+  .cr-course-card { flex-direction: column; }
+  .cr-video-row { flex-direction: column; align-items: stretch; }
+  .lp-step { flex-wrap: wrap; gap: 10px; }
+  .notif-card { flex-direction: column; }
+  .leader-row { flex-wrap: wrap; }
+  .card { overflow-x: auto; }
+  .card table { min-width: 540px; }
+  .score-input { max-width: 100%; width: 100%; }
+}
+
+@media (max-width: 767px) {
+  .topbar-left { flex-wrap: wrap; gap: 10px; }
+  .topbar-right { flex-wrap: wrap; gap: 10px; justify-content: flex-end; }
+  .topbar-right .btn-primary { width: 100%; }
+  .chat-input { width: 100%; }
+  .chat-sidebar, .chat-main { min-height: auto; }
+  .cr-tabs { gap: 6px; }
+  .cr-course-card { gap: 8px; }
+  .cr-yt-thumb, .cr-course-thumb { width: 100%; height: auto; border-radius: 12px; }
+  .cr-video-row { gap: 8px; }
+  .timetable-overview { grid-template-columns: 1fr; }
+  .tt-table { display: block; overflow-x: auto; width: 100%; }
+  .tt-table thead, .tt-table tbody, .tt-table tr { display: table; width: 100%; }
+  .streak-hero { padding: 22px; gap: 18px; }
+  .streak-fire { font-size: 52px; }
+  .gamify-grid { grid-template-columns: 1fr; }
+  .badge-grid { justify-content: flex-start; }
+  .puzzle-card { flex-direction: column; align-items: flex-start; }
+  .leader-row { flex-direction: column; align-items: flex-start; }
+  .content { padding: 18px 14px; }
+  #page-home { padding: 18px 16px; }
+  .home-feature-card { min-width: 0; }
+  .home-feature-card button { width: 100%; }
+  .form-grid { grid-template-columns: 1fr; }
+  .section-grid { grid-template-columns: 1fr; }
+  .custom-grid { grid-template-columns: 1fr; }
+  .plan-types { grid-template-columns: 1fr; }
+  .assessment-types { grid-template-columns: 1fr; }
+  .step-wizard { overflow-x: auto; }
+}
+
