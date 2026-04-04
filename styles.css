@@ -11,7 +11,7 @@
     --sky: #5B8DB8;
     --card-bg: #FFFAF4;
     --shadow: 0 4px 24px rgba(82, 54, 20, 0.1);
-    --shadow-lg: 0 8px 40px rgba(26,18,8,0.16);
+    --shadow-lg: 0 8px 40px rgba(246, 235, 222, 0.16);
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1236,7 +1236,6 @@ textarea.form-input { resize: vertical; min-height: 80px; }
   /* Mobile: up to 767px — hidden drawer sidebar */
   @media (max-width: 767px) {
     .menu-toggle { display: flex; }
-    .sidebar-overlay { display: block; }
 
     .sidebar {
       width: 230px;
